@@ -1,0 +1,39 @@
+#banner{display:flex;align-items: center;height: 95vh;}
+
+#wrapper{background-color:white;border-top-right-radius:50px;border-top-left-radius:50px;height: 100%;
+    box-shadow: 0px 20px 20px 5px gray;}
+
+#intro{text-align: center;font-size: 70px;font-weight: 700;font-family: 'Kanit', sans-serif;transform: translateY(-26%);}
+
+#abt-right h1{font-weight: 200;font-family: 'Kanit', sans-serif;font-size: 45px;line-height:44px;}
+
+#abt-right h2{font-weight: 600;font-family: 'Kanit', sans-serif;font-size: 25px;line-height:28px;padding-top: 15%;}
+
+#abt-right h4{font-weight: 200;font-family: 'Kanit', sans-serif;font-size: 15px;line-height:18px;letter-spacing: 0.5;}
+
+#abt-btn{width: 70%;background-color: rgb(25, 178, 239); border: 3px solid skyblue;color: white;border-radius: 10px;padding: 15px;margin-top: 10%;}
+
+#abt-btn:hover{background-color: skyblue;border: 3px solid rgb(25, 178, 239);color: black;}
+
+#abt-img-2{width: 98%;margin-top: 18%; border: 8px groove grey;}
+
+#abt-btn-xs{width: 70%;background-color: rgb(25, 178, 239); border: 3px solid skyblue;color: white;border-radius: 10px;
+    padding: 15px;margin-top: 10%;margin-left: 15%;}
+
+#abt-img-2-xs{width: 95%;margin-top: 17%; border: 8px groove grey;}
+
+#department{margin-top: 10%;}
+
+#dep_img:hover{transform: scale(1.2);cursor: pointer;transition: 0.4s;}
+
+#medical_camp{margin-top: 10%;}
+
+#testimonial{margin-top: 10%;}
+
+#test-right{background-color:rgb(25, 178, 239); height: 35rem; width: 100%;display: grid;align-items: center;text-align: center;color: white;}
+
+#t-text{font-weight: 400;font-family: 'Kanit', sans-serif;}
+
+#left_img{height: 35rem; width: 100%;}
+
+#specalist{margin-top: 10%;}

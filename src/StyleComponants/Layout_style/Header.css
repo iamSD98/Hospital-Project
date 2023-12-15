@@ -1,0 +1,19 @@
+#appbar{background-color:white;position: sticky;box-shadow: none;}
+
+#appbar1{background-color:white;box-shadow: gray;}
+
+#tab{color: black;font-weight: 600;font-family: 'Kanit', sans-serif;font-size: 17px;}
+
+#tab:hover{color: rgb(25, 178, 239);font-weight: 800;}
+
+#tab::after{content: "";width: 0%; height: 2px;background:black;display: block;transition: 0.5s;margin-left: 0px;}
+
+#tab:hover::after{width: 100%;}
+
+#btn1{background-color: rgb(25, 178, 239);color: white;border: 2px solid skyblue;margin: 6px;font-family: 'Kanit', sans-serif;}
+
+#btn1:hover{background-color: skyblue;color: black;border: 2px solid rgb(25, 178, 239);}
+
+#btn2{background-color: skyblue;color: black;border: 2px solid rgb(25, 178, 239);margin: 6px;font-family: 'Kanit', sans-serif;}
+
+#btn2:hover{background-color: rgb(25, 178, 239);color: white;border: 2px solid skyblue;}

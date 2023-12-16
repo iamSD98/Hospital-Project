@@ -14,6 +14,11 @@ const Routing = () => {
       <Routes>
         <Route path="*" element={<PNF />}></Route>
         <Route path="/" element={<Home />}></Route>
+
+        <Route path='department-page' element={<Department/>}/>
+        <Route path='department-page/deptdetails-page/:id' element={<DeptDetails/>}/>
+        <Route path='department-page/deptdetails-page/:id/doctordetails-page/:did' element={<DoctorDetails/>}/>
+  
         <Route path="login" element={<Login />}></Route>
         <Route path="signUp" element={<Reg />}></Route>
       </Routes>

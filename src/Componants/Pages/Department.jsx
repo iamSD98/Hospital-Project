@@ -14,6 +14,22 @@ import { Link } from "react-router-dom";
 
 const Department = () => {
   let doc_url = " http://localhost:4000/doctors/";
+
+  let banner_url = " http://localhost:4000/image";
+  let [img, setImg] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(banner_url)
+      .then((res) => {
+        console.log("The banner ", res.data);
+        setImg(res.data);
+      })
+      .catch((err) => {
+        console.log("banner dont fetch", err);
+      });
+  }, []);
+  
   let [fetchdoc, setFetchdoc] = useState([]);
 
   useEffect(() => {
@@ -42,6 +58,11 @@ const Department = () => {
             </Grid>
           </Box>
         </Container>
+        {img.map((post) => (
+          <React.Fragment key={post.id}>
+            <img src={post.banner.deptbanner} alt="" id="d-banner" />
+          </React.Fragment>
+        ))}
       </Box>
 
       {/*---------------------------------------------------------------Wrapper----------------------------------------------------------------------*/}

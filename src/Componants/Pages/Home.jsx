@@ -57,8 +57,8 @@ const Home = () => {
           </Grid>
         </Container>
         {img.map((post) => (
-          <React.Fragment key={post.id[1]}>
-            <img src={post.img} alt="" id="banner" />
+          <React.Fragment key={post.id}>
+            <img src={post.banner.homebanner} alt="" id="banner" />
           </React.Fragment>
         ))}
       </Box>

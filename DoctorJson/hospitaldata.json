@@ -2,7 +2,10 @@
   "image":[
     {
       "id":1,
-      "img":"assets/img/banner.png"
+      "banner":{
+        "homebanner":"assets/img/banner.png",
+        "deptbanner":"assets/img/department.jpeg"
+      }
     }
     
   ],

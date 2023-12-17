@@ -9,6 +9,7 @@
 
 #dep-banner::before {
   content: "";
+  
   position: absolute;
   background: linear-gradient(to right, rgb(25, 178, 239), transparent);
   height: 50%;
@@ -34,7 +35,10 @@
   position: relative;
 }
 #dep-wrapper::after{
-    content: '';
+    content: ' We have best doctor in our city';
+    color: blueviolet;
+    text-align: center;
+    font-size: 40px;
     height: 18%;
     width: 100%;
     top: 0;

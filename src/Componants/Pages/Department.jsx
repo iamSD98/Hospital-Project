@@ -49,6 +49,7 @@ const Department = () => {
       <Container maxWidth="x1">
         <Box id="dep-wrapper" sx={{display:{md:'flex',xs:'none'}}}>
           <Container>
+            
             <Grid container spacing={6} >
               {fetchdoc.map((post) => (
                 <Grid item md={4} key={post.id} >

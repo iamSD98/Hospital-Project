@@ -101,7 +101,7 @@ const Department = () => {
                       borderRadius: "20px",
                       boxShadow: "0px 5px 10px black",
                       marginBottom:5,
-                      marginTop:12,
+                      marginTop:5,
                       backgroundPosition:'center',
                       backgroundSize:'cover'
                     }}

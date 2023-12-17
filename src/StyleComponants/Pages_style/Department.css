@@ -54,14 +54,14 @@
   }
   #dep-wrapper1::after{
     content: '';
-    height: 8%;
+    height: 5%;
     width: 100%;
     top: 0;
     position: absolute;
     background-color: white;
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
-    transform: translateY(-47%);
+    transform: translateY(-63%);
 }
 #btn{background-color: rgb(25, 178, 239);color: black;}
 

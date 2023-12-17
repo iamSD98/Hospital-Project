@@ -35,9 +35,9 @@ const Header = () => {
                <Tab label="Doctor" id="tab"/>
                </Link> 
                
-                <a href="#department">
+                <Link to='department-page'>
                 <Tab label="Department" id="tab"/>
-                </a>
+                </Link>
                
               
                <Link to='/'>

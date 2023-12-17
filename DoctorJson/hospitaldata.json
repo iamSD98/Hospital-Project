@@ -1,9 +1,16 @@
 {
+  "image":[
+    {
+      "id":1,
+      "img":"assets/img/banner.png"
+    }
+    
+  ],
   "doctors": [
     {
       "id": 1,
       "department": "General Physican",
-      "deptbanner": "",
+      "deptbanner": "assets/img/genarel_p.jpg",
       "heading": "General Physican",
       "subheading": "We understand that women across different age groups have different health complications. At AMRI, a lot of emphasis is laid on providing top notch gynaecological treatment. The Department of Obstetrics & Gynaecology across all units aim to provide the most comprehensive womens healthcare services. Highly trained technicians, latest technology & equipment, and some of the best gynaecologists in Kolkata.",
       "consultant": [
@@ -33,7 +40,7 @@
     {
       "id": 2,
       "department": "Cardiologist",
-      "deptbanner": "https://thumbs.dreamstime.com/z/protect-health-healthcare-heart-problems-prevention-cardiology-concept-cardiologist-protective-gesture-symbol-65460367.jpg",
+      "deptbanner": "https://www.vadamalayan.org/wp-content/uploads/2023/02/cardio-img.jpg",
       "heading": "Cardiologist",
       "subheading": "We understand that women across different age groups have different health complications. At AMRI, a lot of emphasis is laid on providing top notch gynaecological treatment. The Department of Obstetrics & Gynaecology across all units aim to provide the most comprehensive womens healthcare services. Highly trained technicians, latest technology & equipment, and some of the best gynaecologists in Kolkata.",
       "consultant": [
@@ -61,7 +68,7 @@
     {
       "id": 3,
       "department": "Orthopaedic",
-      "deptbanner": "",
+      "deptbanner": "https://img.freepik.com/free-photo/close-up-man-rubbing-his-painful-back-isolated-white-background_1150-2934.jpg?w=1480&t=st=1702754958~exp=1702755558~hmac=f33a32e1be86bff57be57bff95a95864af8ac6f6d9bfc3084bdf54b31d21e861",
       "heading": "Orthopaedic",
       "subheading": "We understand that women across different age groups have different health complications. At AMRI, a lot of emphasis is laid on providing top notch gynaecological treatment. The Department of Obstetrics & Gynaecology across all units aim to provide the most comprehensive womens healthcare services. Highly trained technicians, latest technology & equipment, and some of the best gynaecologists in Kolkata.",
       "consultant": [

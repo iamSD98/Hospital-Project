@@ -6,6 +6,9 @@ import Home from "../Componants/Pages/Home";
 import PNF from "../Componants/Common/PNF";
 import Login from "../Componants/Auth/Login";
 import Reg from "../Componants/Auth/Reg";
+import Department from "../Componants/Pages/Department";
+import DeptDetails from "../Componants/Pages/DeptDetails";
+import DoctorDetails from "../Componants/Pages/DoctorDetails";
 
 const Routing = () => {
   return (

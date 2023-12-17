@@ -5,13 +5,11 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-
-import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import axios from "axios";
-import { Container, Stack } from "@mui/material";
+import '../../StyleComponants/Pages_style/Department.css'
+import { Container} from "@mui/material";
 import { Link } from "react-router-dom";
 
 const Department = () => {
@@ -31,42 +29,115 @@ const Department = () => {
   }, []);
 
   return (
-    <div>
-      <Box>
+    <>
+      <Box id="dep-banner">
         <Container>
-          <h1>Department page</h1>
-        </Container>
-
-        <Grid container spacing={2}>
-          {fetchdoc.map((post) => (
-            <Grid item md={4} key={post.id}>
-              <Card sx={{ maxWidth: 345 }}>
-                <CardMedia
-                  sx={{ height: 140 }}
-                  image="https://www.shutterstock.com/image-vector/vector-medical-icon-doctor-image-600nw-1170228883.jpg"
-                  title="green iguana"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {post.department}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Link to={`deptdetails-page/${post.id}`}>
-                    <Button size="small">Details</Button>
-                  </Link>
-                </CardActions>
-              </Card>
+          <Box>
+            <Grid container>
+              <Grid item md={12} xs={12}>
+                <Typography id="dep-intro">
+                  <h5 style={{textShadow:'0px 5px 8px black'}}>Department</h5>
+                </Typography>
+              </Grid>
             </Grid>
-          ))}
-        </Grid>
+          </Box>
+        </Container>
       </Box>
-    </div>
+
+      {/*---------------------------------------------------------------Wrapper----------------------------------------------------------------------*/}
+
+      <Container maxWidth="x1">
+        <Box id="dep-wrapper" sx={{display:{md:'flex',xs:'none'}}}>
+          <Container>
+            <Grid container spacing={6} >
+              {fetchdoc.map((post) => (
+                <Grid item md={4} key={post.id} >
+                  <Card
+                    sx={{
+                      maxWidth:'100%',
+                      borderRadius: "20px",
+                      boxShadow: "0px 5px 10px black",
+                      marginTop:10,
+                      marginBottom:10,
+                      backgroundPosition:'center',
+                      backgroundSize:'cover'
+                    }}
+                  >
+                    <CardMedia
+                      sx={{ height: 330 }}
+                      image={post.deptbanner}
+                      title="green iguana"
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        {post.department}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        Lizards are a widespread group of squamate reptiles,
+                        with over 6,000 species, ranging across all continents
+                        except Antarctica
+                      </Typography>
+                    </CardContent>
+                    <Box id="b-p">
+                      <Link to={`deptdetails-page/${post.id}`}>
+                        <Button id="btn1">Details</Button>
+                      </Link>
+                      </Box>
+                  </Card>
+                </Grid>
+                
+              ))}
+            </Grid>
+            </Container>
+            </Box>
+            <Box id="dep-wrapper1" sx={{display:{md:'none',xs:'flex'}}}>
+            <Container>
+            <Grid container spacing={2} sx={{display:{md:'none',xs:'flex'}}}>
+              {fetchdoc.map((post) => (
+                <Grid item md={4} key={post.id} >
+                  <Card
+                    sx={{
+                      maxWidth:'100%',
+                      borderRadius: "20px",
+                      boxShadow: "0px 5px 10px black",
+                      marginBottom:5,
+                      marginTop:12,
+                      backgroundPosition:'center',
+                      backgroundSize:'cover'
+                    }}
+                  >
+                    <CardMedia
+                      sx={{ height: 450 }}
+                      image={post.deptbanner}
+                      title="green iguana"
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        {post.department}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        Lizards are a widespread group of squamate reptiles,
+                        with over 6,000 species, ranging across all continents
+                        except Antarctica
+                      </Typography>
+                    </CardContent>
+                   
+                      <Box id="b-p1">
+                      <Link to={`deptdetails-page/${post.id}`}>
+                        <Button id="btn1">Details</Button>
+                      </Link>
+                      </Box>
+                  </Card>
+                </Grid>
+                
+              ))}
+            </Grid>
+          </Container>
+          </Box>
+          </Container>
+      
+     
+    </>
   );
 };
 

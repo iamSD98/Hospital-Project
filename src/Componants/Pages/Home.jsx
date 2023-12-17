@@ -1,32 +1,66 @@
 import { Container, Box, Stack, Grid, Button, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../StyleComponants/Pages_style/Home.css";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import axios from "axios";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+  let banner_url = " http://localhost:4000/image";
+  let [img, setImg] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(banner_url)
+      .then((res) => {
+        console.log("The banner ", res.data);
+        setImg(res.data);
+      })
+      .catch((err) => {
+        console.log("banner dont fetch", err);
+      });
+  }, []);
   return (
     <>
       {/*---------------------------------------------------------------Banner----------------------------------------------------------------------*/}
 
-      <Box id='banner'>
+      <Box id="box">
         <Container>
-          <Box>
-            <Grid container spacing={2}>
-              <Grid item md={6}>
+          <Grid container>
+            <Grid item md={6}>
+              <Box
+                id="banner-text"
+                sx={{ display: { md: "flex", xs: "none" } }}
+              >
                 <Typography id="intro">
                   We Care About
                   <br />
                   <span style={{ fontSize: "60px" }}>Your</span>{" "}
                   <span style={{ color: "crimson" }}>Health</span>
                 </Typography>
-              </Grid>
+              </Box>
+              <Box
+                id="banner-text1"
+                sx={{ display: { md: "none", xs: "flex" } }}
+              >
+                <Typography id="intro">
+                  We Care About
+                  <br />
+                  <span style={{ fontSize: "60px" }}>Your</span>{" "}
+                  <span style={{ color: "crimson" }}>Health</span>
+                </Typography>
+              </Box>
             </Grid>
-          </Box>
+          </Grid>
         </Container>
+        {img.map((post) => (
+          <React.Fragment key={post.id[1]}>
+            <img src={post.img} alt="" id="banner" />
+          </React.Fragment>
+        ))}
       </Box>
 
       {/*---------------------------------------------------------------Wrapper----------------------------------------------------------------------*/}
@@ -53,7 +87,7 @@ const Home = () => {
                     sx={{ display: { md: "flex", xs: "none" } }}
                   >
                     <Button id="abt-btn">
-                      Find Doctors
+                    Emargency 
                       <ArrowRightAltIcon style={{ color: "black" }} />
                     </Button>
                     <Link to="user/authentication">
@@ -64,7 +98,7 @@ const Home = () => {
                     </Link>
 
                     <Button id="abt-btn">
-                      Emargency
+                      career
                       <ArrowRightAltIcon style={{ color: "black" }} />
                     </Button>
                   </Stack>
@@ -91,7 +125,7 @@ const Home = () => {
                     sx={{ display: { md: "none", xs: "flex" } }}
                   >
                     <Button id="abt-btn-xs">
-                      Find Doctors
+                      Emargency
                       <ArrowRightAltIcon style={{ color: "black" }} />
                     </Button>
                     <Link to="user/authentication">
@@ -102,7 +136,7 @@ const Home = () => {
                     </Link>
 
                     <Button id="abt-btn-xs">
-                      Emargency
+                      career
                       <ArrowRightAltIcon style={{ color: "black" }} />
                     </Button>
                   </Stack>

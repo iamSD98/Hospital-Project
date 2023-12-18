@@ -110,8 +110,9 @@ const Department = () => {
                 
               ))}
             </Grid>
-            </Container>
-            </Box>
+          </Container>
+          </Box>
+          
             <Box id="dep-wrapper1" sx={{display:{md:'none',xs:'flex'}}}>
             <Container>
             <Grid container spacing={2} sx={{display:{md:'none',xs:'flex'}}}>

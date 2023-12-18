@@ -97,6 +97,234 @@
           "docid": "ortho03"
         }
       ]
+    },
+    {
+      "id": 4,
+      "department": "Gynaecologist",
+      "deptbanner": "https://7dmc.ae/wp-content/uploads/2020/08/banner-Gynecology-Clinic2.jpg",
+      "heading": "Gynaecologist",
+      "subheading": "We understand that women across different age groups have different health complications. At AMRI, a lot of emphasis is laid on providing top notch gynaecological treatment. The Department of Obstetrics & Gynaecology across all units aim to provide the most comprehensive womens healthcare services. Highly trained technicians, latest technology & equipment, and some of the best gynaecologists in Kolkata.",
+      "consultant": [
+        {
+          "doctorname": "DR. Argha Maitra ",
+          "qualification": "MS(OBS & GYNE),DGO",
+          "experiance": "20 Years", 
+          "proimg": "",
+          "docid": "gyne01"
+        },
+        {
+          "doctorname": "DR.P.K. Nath. Barbhuiya",
+          "qualification": "MBBS,DGO,FICOG",
+          "experiance": "12 Years",
+           "proimg": "",
+          "docid": "gyne02"
+        },
+        {
+          "doctorname": "DR. Debolina Roy",
+          "qualification": "MBBS,MS(OBS & GYNE),MRCOG",
+          "experiance": "15 Years",
+           "proimg": "",
+          "docid": "gyne03"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "department": "Paediatrics",
+      "deptbanner": "https://ssimsb.ac.in/public//uploads/course/1655210928.jpg",
+      "heading": "Paediatrics",
+      "subheading": "We understand that women across different age groups have different health complications. At AMRI, a lot of emphasis is laid on providing top notch gynaecological treatment. The Department of Obstetrics & Gynaecology across all units aim to provide the most comprehensive womens healthcare services. Highly trained technicians, latest technology & equipment, and some of the best gynaecologists in Kolkata.",
+      "consultant": [
+        {
+          "doctorname": "DR. Abhijeet Sarkar",
+          "qualification": "MBBS, DCH(CAL),MRCPCH(PAED)",
+          "experiance": "12 Years", 
+          "proimg": "",
+          "docid": "pedia01"
+        },
+        {
+          "doctorname": "DR. Subhasis Sarkar",
+          "qualification": "MBBS, DCH(CAL)",
+          "experiance": "25 Years", 
+           "proimg": "",
+          "docid": "pedia02"
+        },
+        {
+          "doctorname": "DR. T.K.Ghosh",
+           "qualification": "MBBS, MD(PED),DNB(PED)",
+          "experiance": "15 Years",
+          "proimg": "",
+          "docid": "pedia03"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "department": "Surgeon",
+      "deptbanner": "https://sanjayhospital.in/images/bg/surgical-department.jpg",
+      "heading": "Surgeon",
+      "subheading": "We understand that women across different age groups have different health complications. At AMRI, a lot of emphasis is laid on providing top notch gynaecological treatment. The Department of Obstetrics & Gynaecology across all units aim to provide the most comprehensive womens healthcare services. Highly trained technicians, latest technology & equipment, and some of the best gynaecologists in Kolkata.",
+      "consultant": [
+        {
+          "doctorname": "DR.Somnath Gsosh ",
+          "qualification": "MS,FALS,FICS",
+          "experiance": "25 Years", 
+          "proimg": "",
+          "docid": "sergen01"
+        },
+        {
+          "doctorname": "DR. Asim Basu",
+          "qualification": "MBBS,MS(CAL),(SP-LAPROSCOPIC SURGEN)",
+          "experiance": "20 Years", 
+           "proimg": "",
+          "docid": "sergen02"
+        },
+        {
+          "doctorname": "DR. Shashank Shukla",
+           "qualification": "MBBS,MNAMS,FIACEG",
+          "experiance": "25 Years",
+          "proimg": "",
+          "docid": "sergen03"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "department": "Neurologist",
+      "deptbanner": "https://videohive.img.customer.envatousercontent.com/files/52bfb920-5b9d-42c8-a377-c9f39b302d54/inline_image_preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=23706a6e13e688141541292e541dde18",
+      "heading": "Neurologist",
+      "subheading": "We understand that women across different age groups have different health complications. At AMRI, a lot of emphasis is laid on providing top notch gynaecological treatment. The Department of Obstetrics & Gynaecology across all units aim to provide the most comprehensive womens healthcare services. Highly trained technicians, latest technology & equipment, and some of the best gynaecologists in Kolkata.",
+      "consultant": [
+        {
+          "doctorname": "DR. Alok pandit",
+          "qualification": "MD (GENERAL MEDICINE),DM NURO",
+          "experiance": "23 Years", 
+          "proimg": "",
+          "docid": "neuro01"
+        },
+        {
+          "doctorname": "DR. S Majhi",
+          "qualification": "MBBS, MCH(NURO),WBUHS",
+          "experiance": "21 Years", 
+           "proimg": "",
+          "docid": "neuro02"
+        },
+        {
+          "doctorname": "DR. Debaleena Mukherjee ",
+           "qualification": "MBBS,DM(NUROLOGY)",
+          "experiance": "10 Years",
+          "proimg": "",
+          "docid": "neuro03"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "department": "Nephrologist",
+      "deptbanner": "https://www.southcoasthealth.com/assets/upload/3e71869e-831f-444f-a138-c978f32e2c6a/nephrologist-listens-to-the-kidneys-on-medical-background-3d-illustration.jpg",
+      "heading": "Nephrologist",
+      "subheading": "We understand that women across different age groups have different health complications. At AMRI, a lot of emphasis is laid on providing top notch gynaecological treatment. The Department of Obstetrics & Gynaecology across all units aim to provide the most comprehensive womens healthcare services. Highly trained technicians, latest technology & equipment, and some of the best gynaecologists in Kolkata.",
+      "consultant": [
+        {
+          "doctorname": "DR.Rajen Pandey",
+          "qualification": "MD,DM(NEPHRO),PGT(chandigarh)",
+          "experiance": "16 Years", 
+          "proimg": "",
+          "docid": "nephro01"
+        },
+        {
+          "doctorname": "DR.Satyaki Dey ",
+          "qualification": "DND(MEDICINE),DND(NEPHRO)",
+          "experiance": "15 Years", 
+           "proimg": "",
+          "docid": "nephro02"
+        },
+        {
+          "doctorname": "DR sharmila Thakur",
+           "qualification": "MBBS,MD,DNB",
+          "experiance": "8 Years",
+          "proimg": "",
+          "docid": "nephro03"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "department": "Dentist",
+      "deptbanner": "https://www.dentiquecochin.com/blog/wp-content/uploads/2019/07/dental-implant-treatment-in-kochi.jpg",
+      "heading": "Dentist",
+      "subheading": "We understand that women across different age groups have different health complications. At AMRI, a lot of emphasis is laid on providing top notch gynaecological treatment. The Department of Obstetrics & Gynaecology across all units aim to provide the most comprehensive womens healthcare services. Highly trained technicians, latest technology & equipment, and some of the best gynaecologists in Kolkata.",
+      "consultant": [
+        {
+          "doctorname": "DR. Tirthankar Bhaumik ",
+          "qualification": "BDS,MDS",
+          "experiance": "8 Years", 
+          "proimg": "",
+          "docid": "dentist01"
+        },
+        {
+          "doctorname": "DR.Syantani Dutta ",
+          "qualification": "BDS",
+          "experiance": "7 Years", 
+           "proimg": "",
+          "docid": "dentist02"
+        },
+        {
+          "doctorname": "DR.Saranik Sarkar ",
+           "qualification": "BDS,MDS",
+          "experiance": "10 Years",
+          "proimg": "",
+          "docid": "dentist03"
+        }
+      ]
     }
+  ],
+  "emergencydept":[
+    {
+        "id": 1,
+         "department": "MRI",
+          "deptbanner": "https://www.yashodahealthcare.com/blogs/wp-content/uploads/2023/03/mri-1.jpg",
+          "heading": "MRI",
+          "deptdetails": "Digital MRI scanner with Optical RF technology/Needle-free imagingNon-contrast angio/High-resolution brain images/High Definition of the abdomen imaging/Free-breathing entire abdomen scan/Quantitative perfusion imaging/Hassle-free liver fat and iron quantification"
+    },
+    {
+      "id": 2,
+       "department": "ULTRASOUND",
+        "deptbanner": "https://www.iuslondon.co.uk/wp-content/uploads/2020/06/what-is-ultrasound-scan.jpg",
+        "heading": "ULTRASOUND",
+        "deptdetails": "4D Ultrasound – volume-imaging produces a dynamic, real-time look that virtually eliminates any questions about missed information./It’s seeing things in ways you’ve never seen before with ultrasound. Finding the exact location of pathology and viewing it in relation to another anatomy./Knowing you have all the information you need for definitive answers. As much as the machine the man behind the machine is also important."
+    },
+    
+    {
+      "id": 3,
+       "department": "ECHO",
+        "deptbanner": "https://myheart.net/wp-content/uploads/2013/08/dreamstime_m_299103341.jpg",
+        "heading": "ECHO",
+        "deptdetails": "Assess the overall function of your heart/Determine the presence of many types of heart disease, such as valve disease,/ myocardial disease, pericardial disease, infective endocarditis, cardiac masses and congenital heart diseaseFollow the progress of valve disease over time/Evaluate the effectiveness of your medical or surgical treatments"
+    },
+    {
+      "id": 4,
+       "department": "PFT",
+        "deptbanner": "https://www.diabecare.org/images/pft-test.jpg",
+        "heading": "PFT",
+        "deptdetails": "A respiratory therapist will guide you through each test in a special exam room that has all the lung function measuring devices./Most of the tests are quick, easy and painless, but be sure to tell the therapist if you feel light-headed, tired or uncomfortable./Don’t eat a heavy meal right before the test, and avoid caffeinated foods or drinks.Don’t smoke or exercise strenuously for six hours before the test."
+    },
+    {
+      "id": 5,
+       "department": "CT SCAN",
+        "deptbanner": "https://www.wisemedical.com.au/wp-content/uploads/2023/06/Radiology3-1.jpg",
+        "heading": "CT SCAN",
+        "deptdetails": "High-resolution images/Optimized dose levels/Sub-millimetre slice thickness/ An experience designed for patient comfort/ASIR & Organ Dose Modulation For Low-Dose Imaging"
+    },
+    
+    {
+      "id": 6,
+       "department": "DIGITAL XRAY",
+        "deptbanner": "https://www.healthimages.com/content/uploads/sites/2/2022/11/xray.jpg.webp",
+        "heading": "DIGITAL XRAY",
+        "deptdetails": "Universal, flexible and affordable modality combining a single detector and fully-motorized positioning, which increases productivity./U-arm allowing lateral ‘cross table’ exams on rolling tables, for a number of configurations and increased patient and technologist comfort."
+    }
+
+
   ]
 }

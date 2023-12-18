@@ -31,9 +31,10 @@ const Header = () => {
                <Link to='/'>
                  <Tab label="Home" id="tab"/>
                </Link> 
-               <Link to='/'>
-               <Tab label="Doctor" id="tab"/>
-               </Link> 
+               
+               <Link to='emergency-dept-page'>
+                <Tab label="Emergency" id="tab"/>
+                </Link>
                
                 <Link to='department-page'>
                 <Tab label="Department" id="tab"/>

@@ -9,6 +9,7 @@ import Reg from "../Componants/Auth/Reg";
 import Department from "../Componants/Pages/Department";
 import DeptDetails from "../Componants/Pages/DeptDetails";
 import DoctorDetails from "../Componants/Pages/DoctorDetails";
+import EmergencyDept from "../Componants/Pages/EmergencyDept";
 
 const Routing = () => {
   return (
@@ -21,6 +22,8 @@ const Routing = () => {
         <Route path='department-page' element={<Department/>}/>
         <Route path='department-page/deptdetails-page/:id' element={<DeptDetails/>}/>
         <Route path='department-page/deptdetails-page/:id/doctordetails-page/:did' element={<DoctorDetails/>}/>
+
+        <Route path='emergency-dept-page' element={<EmergencyDept/>}/>
   
         <Route path="login" element={<Login />}></Route>
         <Route path="signUp" element={<Reg />}></Route>

@@ -1,8 +1,5 @@
 #dep-banner {
-  background-image: url(../../../public/Assets/img/department.jpeg);
-  box-shadow: 2px 5px 10px grey;
-  background-position: center;
-  background-size: cover; 
+  width: 100%;height: 80vh;
 }
 #dep-banner::before {
   content: "";
@@ -17,12 +14,12 @@
 }
 #dep-intro {
   text-align: center;
-  font-size: 80px;
+  font-size: 64px;
   font-weight: 700;
   font-family: "Kanit", sans-serif;
   color: white;
   position: absolute;
-  top: 20%;
+  top: 30%;
 }
 
 #dep-wrapper {
@@ -35,10 +32,12 @@
 }
 #dep-wrapper::after{
     content: ' We have best doctor in our city';
-    color: blueviolet;
+    color: black;
     text-align: center;
     font-size: 40px;
-    height: 18%;
+    font-family: 'kanit';
+    padding-top: 2%;
+    height: 4%;
     width: 100%;
     top: 0;
     position: absolute;
@@ -56,15 +55,20 @@
     position: relative;
   }
   #dep-wrapper1::after{
-    content: '';
-    height: 5%;
+    content: ' We have best doctor in our city';
+    color: black;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'kanit';
+    padding-top: 2%;
+    height: 2%;
     width: 100%;
     top: 0;
     position: absolute;
     background-color: white;
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
-    transform: translateY(-63%);
+    transform: translateY(-46%);
 }
 #btn{background-color: rgb(25, 178, 239);color: black;}
 

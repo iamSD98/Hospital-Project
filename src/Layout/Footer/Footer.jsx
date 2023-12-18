@@ -34,7 +34,7 @@ const Footer = () => {
               +033-5425-6521
               </Stack>
               <Stack id='c2'>
-              youremail@gmail.com
+              S&Shospital@gmail.com
               </Stack> 
             </Grid>
            

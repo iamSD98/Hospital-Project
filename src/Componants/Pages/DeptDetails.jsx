@@ -22,11 +22,11 @@ const DeptDetails = () => {
     axios
       .get(`${depart_url}/${id}`)
       .then((res) => {
-        console.log("The fetch docdor ", res.data);
+        // console.log("The fetch docdor ", res.data);
         setDept(res.data);
       })
       .catch((err) => {
-        console.log("Doctor dont fetch", err);
+        // console.log("Doctor dont fetch", err);
       });
   }, []);
   return (
@@ -37,10 +37,10 @@ const DeptDetails = () => {
           <Box>
             <Grid container>
               <Grid item md={12} xs={12}>
-                <Typography id="d-dintro">
-                  <h5 style={{ textShadow: "0px 5px 8px black" }}>
+                <Typography style={{ textShadow: "0px 5px 8px black" }} id="d-dintro">
+             
                     {fetchdept.department}
-                  </h5>
+               
                 </Typography>
               </Grid>
             </Grid>

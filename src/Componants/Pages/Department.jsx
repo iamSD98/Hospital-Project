@@ -22,11 +22,11 @@ const Department = () => {
     axios
       .get(banner_url)
       .then((res) => {
-        console.log("The banner ", res.data);
+        // console.log("The banner ", res.data);
         setImg(res.data);
       })
       .catch((err) => {
-        console.log("banner dont fetch", err);
+        // console.log("banner dont fetch", err);
       });
   }, [banner_url]);
   
@@ -36,11 +36,11 @@ const Department = () => {
     axios
       .get(doc_url)
       .then((res) => {
-        console.log("The fetch docdor ", res.data);
+        // console.log("The fetch docdor ", res.data);
         setFetchdoc(res.data);
       })
       .catch((err) => {
-        console.log("Doctor dont fetch", err);
+        // console.log("Doctor dont fetch", err);
       });
   }, []);
 
@@ -51,8 +51,8 @@ const Department = () => {
           <Box>
             <Grid container>
               <Grid item md={12} xs={12}>
-                <Typography id="dep-intro">
-                  <h5 style={{textShadow:'0px 5px 8px black'}}>Department</h5>
+                <Typography style={{textShadow:'0px 5px 8px black'}} id="dep-intro">
+                  Department
                 </Typography>
               </Grid>
             </Grid>
@@ -60,7 +60,7 @@ const Department = () => {
         </Container>
         {img.map((post) => (
           <React.Fragment key={post.id}>
-            <img src={post.banner.deptbanner} alt="" id="d-banner" />
+            <img src={post.banner.depatbanner} alt="" id="d-banner" />
           </React.Fragment>
         ))}
       </Box>
@@ -94,7 +94,7 @@ const Department = () => {
                       <Typography gutterBottom variant="h5" component="div">
                         {post.department}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary">
+                      <Typography variant="h5" color="text.secondary">
                         Lizards are a widespread group of squamate reptiles,
                         with over 6,000 species, ranging across all continents
                         except Antarctica
@@ -123,14 +123,14 @@ const Department = () => {
                       maxWidth:'100%',
                       borderRadius: "20px",
                       boxShadow: "0px 5px 10px black",
-                      marginBottom:5,
-                      marginTop:5,
+                      marginBottom:10,
+                      marginTop:10,
                       backgroundPosition:'center',
                       backgroundSize:'cover'
                     }}
                   >
                     <CardMedia
-                      sx={{ height: 450 }}
+                      sx={{ height: 330 }}
                       image={post.deptbanner}
                       title="green iguana"
                     />

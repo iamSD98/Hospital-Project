@@ -4,7 +4,8 @@
       "id":1,
       "banner":{
         "homebanner":"assets/img/banner.png",
-        "deptbanner":"assets/img/department.jpeg"
+        "depatbanner":"assets/img/department.jpeg",
+        "emerbanner":"https://images.unsplash.com/photo-1554734867-bf3c00a49371?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZW1lcmdlbmN5fGVufDB8fDB8fHww"
       }
     }
     

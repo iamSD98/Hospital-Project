@@ -28,7 +28,7 @@ const Department = () => {
       .catch((err) => {
         console.log("banner dont fetch", err);
       });
-  }, []);
+  }, [banner_url]);
   
   let [fetchdoc, setFetchdoc] = useState([]);
 

@@ -14,18 +14,20 @@ const Footer = () => {
               </Typography>
             </Grid>
             <Grid item md={4}>
-              <Typography>
-                <Stack id='p1'>
+              <Box>
+                <Stack id='p1'> 
                   ABOUT US
-                </Stack>
-                <Stack id='p2'>
-                  Lorem igpsum doldfor sit amet, adipiscing elit, sed do eiusmod
+                </Stack> 
+                
+                   <Stack id='p2'>
+                   Lorem igpsum doldfor sit amet, adipiscing elit, sed do eiusmod
                   tempor cergelit rgh.
-                </Stack>
-                <Stack id='p3'>
-                  Lorem ipsum dolor sit amet, adipiscing elit.
-                </Stack>
-              </Typography>
+                  </Stack>
+                
+                
+                  <Stack id='p2'> Lorem ipsum dolor sit amet, adipiscing elit.</Stack>
+              
+              </Box>
             </Grid>
             <Grid item md={4}>
               <Stack id='c1'>
@@ -33,11 +35,11 @@ const Footer = () => {
               </Stack>
               <Stack id='c2'>
               youremail@gmail.com
-              </Stack>
+              </Stack> 
             </Grid>
            
           </Grid>
-          <Box id='cpy'>
+           <Box id='cpy'>
            Copyright ©2023 All rights reserved 
            <br/><span>This template is made by <span style={{color:'crimson'}}>Subham & Siddhartha</span></span>
            </Box>

@@ -16,13 +16,13 @@ const Home = () => {
     axios
       .get(banner_url)
       .then((res) => {
-        console.log("The banner ", res.data);
+        // console.log("The banner ", res.data);
         setImg(res.data);
       })
       .catch((err) => {
-        console.log("banner dont fetch", err);
+        // console.log("banner dont fetch", err);
       });
-  }, []);
+  }, [banner_url]);
   return (
     <>
       {/*---------------------------------------------------------------Banner----------------------------------------------------------------------*/}
@@ -98,7 +98,7 @@ const Home = () => {
                     </Link>
 
                     <Button id="abt-btn">
-                      career
+                    Academics
                       <ArrowRightAltIcon style={{ color: "black" }} />
                     </Button>
                   </Stack>

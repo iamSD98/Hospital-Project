@@ -1,7 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import axios from 'axios';
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
@@ -27,7 +26,7 @@ const EmergencyDept = () => {
         .catch(err=>{
             console.log("Data not fetch ",err);
         })
-    },[])
+    },[emgcy_url])
 
 
 
@@ -35,14 +34,13 @@ const EmergencyDept = () => {
 
   return (
     <>
-        <h1>EmergencyDept</h1>
         <Box id="dep-banner">
         <Container>
           <Box>
             <Grid container>
               <Grid item md={12} xs={12}>
                 <Typography id="dep-intro">
-                  <h5 style={{textShadow:'0px 5px 8px black'}}>Department</h5>
+                  <h5 style={{textShadow:'0px 5px 8px black'}}>Emergency Department</h5>
                 </Typography>
               </Grid>
             </Grid>

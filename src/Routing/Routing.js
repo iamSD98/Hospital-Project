@@ -10,6 +10,7 @@ import Department from "../Componants/Pages/Department";
 import DeptDetails from "../Componants/Pages/DeptDetails";
 import DoctorDetails from "../Componants/Pages/DoctorDetails";
 import EmergencyDept from "../Componants/Pages/EmergencyDept";
+import Career from "../Componants/Pages/Career";
 
 const Routing = () => {
   return (
@@ -18,13 +19,11 @@ const Routing = () => {
       <Routes>
         <Route path="*" element={<PNF />}></Route>
         <Route path="/" element={<Home />}></Route>
-
         <Route path='department-page' element={<Department/>}/>
         <Route path='department-page/deptdetails-page/:id' element={<DeptDetails/>}/>
         <Route path='department-page/deptdetails-page/:id/doctordetails-page/:did' element={<DoctorDetails/>}/>
-
         <Route path='emergency-dept-page' element={<EmergencyDept/>}/>
-  
+        <Route path='academics' element={<Career/>}/>
         <Route path="login" element={<Login />}></Route>
         <Route path="signUp" element={<Reg />}></Route>
       </Routes>

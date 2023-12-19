@@ -6,18 +6,22 @@ import {
   TextField,
   Stack,
   InputAdornment,
-  FormControl,
 } from "@mui/material";
 import React, { useState } from "react";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import Checkbox from "@mui/material/Checkbox";
 import "../../StyleComponants/Auth_style/SignUp.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { sign_Up } from "../../Redux/Slice/AuthSlice";
 
 const Reg = () => {
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate()
   let vaildRegxp_fname = RegExp("^([A-Z]{1})([a-z]{2,12})$");
   let vaildRegxp_lname = RegExp("^([A-Z]{1})([a-z]{1,18})$");
-  let vaildRegxp_mail = RegExp("^([a-z0-9])+@(gmail|yahoo|outlook).(com)$");
+  let vaildRegxp_mail = RegExp("^([a-z0-9])+@([a-z]{5,12}).([a-z.]{2,20})$");
   let vaildRegxp_pass = RegExp(
     "^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{6,11}$"
   );
@@ -48,6 +52,7 @@ const Reg = () => {
 
   let changeHandle = (event) => {
     let { name, value } = event.target;
+    // console.log(name,value);
     let errMsg = Inputstate.errors;
 
     switch (name) {
@@ -97,7 +102,7 @@ const Reg = () => {
           setIsvalid({ ...Isvalid, password: true });
         } else if (!vaildRegxp_pass.test(value)) {
           errMsg.password =
-            "*One letter uppercase\n*Including a number\n*Including a symbol\n*At least 8 or 11 characters";
+            "*One letter uppercase\n*Including a number\n*Including a symbol\n*At least 6 or 11 characters";
           setIsvalid({ ...Isvalid, password: true });
         } else {
           errMsg.password = "";
@@ -109,8 +114,26 @@ const Reg = () => {
     }
     setInputstate({ ...Inputstate, [name]: value, errors: errMsg });
   };
-  let submitHandle = (event) => {
-    event.preventDefault();
+
+  let submitHandle=(event)=>{
+   event.preventDefault();
+    console.log("the reg data",Inputstate);
+    let registarData = new FormData();
+
+    registarData.append("first_name",Inputstate.fname);
+    registarData.append("last_name",Inputstate.lname);
+    registarData.append("email",Inputstate.email);
+    registarData.append("password",Inputstate.password);
+
+    dispatch(sign_Up(registarData))
+      .then(res=>{
+        console.log("Response from API", res);
+        alert('user Registar')
+        navigate("/login");
+      })
+      .catch(err=>{
+        console.log("Reg failed",err);
+      });
   };
   return (
     <>
@@ -126,7 +149,8 @@ const Reg = () => {
                   <Grid align="center">
                     <h2>Sign Up</h2>
                   </Grid>
-                  <FormControl id="r-f1" onSubmit={submitHandle}>
+                  <form onSubmit={submitHandle} id="r-f1">
+                    
                     <Grid container spacing={2} my={2}>
                       <Grid item md={6}>
                         <TextField
@@ -275,7 +299,7 @@ const Reg = () => {
                       Sign Up
                     </Button>
                     
-                  </FormControl>
+                  </form>
                   <h4 id="link-text">
                     Already you have a account!
                     <Link
@@ -300,7 +324,7 @@ const Reg = () => {
                   <Grid align="center">
                     <h2>Sign Up</h2>
                   </Grid>
-                  <FormControl id="f2">
+                  <form id="f2">
                     <TextField
                       fullWidth
                       label="First Name"
@@ -445,7 +469,7 @@ const Reg = () => {
                     >
                       Sign Up
                     </Button>
-                  </FormControl>
+                  </form>
                   <h4 id="link-text">
                     Already you have a account!
                     <Link

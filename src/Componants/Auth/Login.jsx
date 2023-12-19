@@ -8,19 +8,23 @@ import {
   Typography,
   Stack,
   InputAdornment,
-  FormControl,
 } from "@mui/material";
 import "../../StyleComponants/Auth_style/Login.css";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import Checkbox from "@mui/material/Checkbox";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { sign_In } from "../../Redux/Slice/AuthSlice";
+
 
 const Login = () => {
-  // let vaildRegxp_name = ["^([A-Z][a-z])( )([A-Z][a-z])$"]
-  let vaildRegxp_mail = RegExp("^([a-z0-9])+@(gmail|yahoo|outlook).(com)$");
-  let vaildRegxp_pass = RegExp(
-    "^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8,11}$"
-  );
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+ 
+
+  let vaildRegxp_mail = RegExp("^([a-z0-9])+@([a-z]{5,12}).([a-z.]{2,20})$");
+  let vaildRegxp_pass = RegExp("^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{6,11}$");
 
   let [inputstate, setinputstate] = useState({
     email: "",
@@ -75,27 +79,47 @@ const Login = () => {
         console.log("error");
     }
     setinputstate({ ...inputstate, [name]: value, error: errmsg });
-    // console.log("error: ",inputstate.errors);
+    // console.log(name,value);
   };
+  const [user, setUser] = useState(null);
 
-  let submitHandle = (event) => {
-    event.preventDefault();
-    // console.log("the reg data", inputstate);
-    // let registarData = new FormData();
+  const submitHandle=(e)=>{
+    e.preventDefault();
+    
+    let userdata = new FormData();
+    userdata.append("email", inputstate.email);
+    userdata.append("password", inputstate.password);
 
-    // registarData.append("first_name", state.first_name);
-    // registarData.append("last_name", state.last_name);
-    // registarData.append("email", state.email);
-    // registarData.append("password", state.password);
-
-    // dispatch(hosp_sgin_up(registarData))
-    //   .then((res) => {
-    //     console.log("Response from API", res);
-    //     navigate("/user/authentication/login");
-    //   })
-    //   .catch((err) => {
-    //     console.log("Reg failed");
-    //   });
+    dispatch(sign_In(userdata))
+    .then(res=>{
+      console.log("Response of API",res)
+      if(res.payload.status===200)
+      {
+        window.sessionStorage.setItem("tokenValue",res.payload.token)
+        window.sessionStorage.setItem("email",res.payload.data.email)
+          navigate("/")
+          
+      }
+      else if (res.payload.status===201) {
+        setUser('User Not Found')
+      //   setinputstate({
+      //     email: '',
+      //     password: '',
+      // });
+      // setIsCorrect({
+      //   email: true,
+      //   password: true,
+      // })
+    }
+      else{
+         setUser(null)
+          
+      }
+  })
+  .catch((err)=>{
+      console.log("Login failed",err);
+  })
+ 
   };
 
   return (
@@ -112,12 +136,14 @@ const Login = () => {
                   <Grid align="center">
                     <h2>LogIn</h2>
                   </Grid>
-                  <FormControl id="f1" onSubmit={submitHandle}>
+                  <form id="f1" onSubmit={submitHandle}>
+                  {user && <Stack style={{ color: 'red',paddingBottom:10 }}>{user}</Stack>}
                     <TextField
                       fullWidth
                       id="input-with-icon-textfield"
                       label="Email"
                       name="email"
+                      
                       style={{ marginBottom: "5%" }}
                       onChange={changeHandle}
                       InputProps={{
@@ -149,6 +175,7 @@ const Login = () => {
                       fullWidth
                       label="Password"
                       name="password"
+                      
                       type={passwordType}
                       onChange={changeHandle}
                       InputProps={{
@@ -183,15 +210,17 @@ const Login = () => {
                         {inputstate.errors.password}
                       </Typography>
                     ) : null}
-
+                    
                     <Button
                       variant="contained"
                       color="primary"
+                      type="submit"
                       disabled={isCorrect.email || isCorrect.password}
                     >
                       Sign In
                     </Button>
-                  </FormControl>
+                    
+                  </form>
 
                   <h4 id="link-text">
                     Do you want to create a account?
@@ -210,14 +239,15 @@ const Login = () => {
 
           {/* ----------------------------------------- small screen ---------------------------------------------------*/}
 
-          <Box id="login-page" sx={{ display: { xs: "flex", md: "none" } }}>
+         <Box id="login-page" sx={{ display: { xs: "flex", md: "none" } }}>
             <Grid container>
               <Grid item xs={12}>
                 <Box id="s-login">
                   <Grid align="center">
                     <h2>LogIn</h2>
                   </Grid>
-                  <FormControl id="f2">
+                  <form id="f2" onSubmit={submitHandle}>
+                  {user && <Stack style={{ color: 'red',paddingBottom:10 }}>{user}</Stack>}
                     <TextField
                       fullWidth
                       label="Email"
@@ -291,16 +321,17 @@ const Login = () => {
                         {inputstate.errors.password}
                       </Typography>
                     ) : null}
-
+                   
                     <Button
                       variant="contained"
                       color="primary"
+                      type="submit"
                       value={isCorrect.email}
                       disabled={isCorrect.email || isCorrect.password}
                     >
                       Sign In
                     </Button>
-                  </FormControl>
+                  </form>
                   <h4 id="link-text">
                     Do you want to create a account?
                     <Link

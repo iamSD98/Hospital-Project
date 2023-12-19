@@ -13,6 +13,7 @@ import EmergencyDept from "../Componants/Pages/EmergencyDept";
 import Career from "../Componants/Pages/Career";
 import AdmissionForm from "../Componants/Pages/AdmissionForm";
 import DocAppoint from "../Componants/Pages/DocAppoint";
+import ProtectedRoute from "./ProtectedRoute";
 
 const Routing = () => {
   return (
@@ -26,10 +27,12 @@ const Routing = () => {
         <Route path='department-page/deptdetails-page/:id/doctordetails-page/:did' element={<DoctorDetails/>}/>
         <Route path='emergency-dept-page' element={<EmergencyDept/>}/>
         <Route path='academics' element={<Career/>}/>
+        
+             
+        <Route element={<ProtectedRoute/>}>  
         <Route path='admission' element={<AdmissionForm/>}/>
-
         <Route path='/doctor-appo/:did' element={<DocAppoint/>}/>
-
+        </Route>  
         <Route path="login" element={<Login />}></Route>
         <Route path="signUp" element={<Reg />}></Route>
       </Routes>

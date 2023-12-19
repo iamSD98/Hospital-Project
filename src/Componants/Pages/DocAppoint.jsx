@@ -1,23 +1,23 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Box, Container, Grid, Paper, TextField,Button } from "@mui/material";
-import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import dayjs from 'dayjs';
+
 
 const DocAppoint = () => {
+
+let vaild_email=window.sessionStorage.getItem('email')
+// console.log(valid_email);
 
 let {did}=useParams();
 console.log("doctor id",did);
 
-const [value, setValue] = React.useState(dayjs('2022-04-17T15:30'));
+
+const [selectedDateTime, handleDateTimeChange] = useState(null);
 
 let [ptnDetail, setPtnDetail] = useState({
   pname: "",
   padd: "",
-  pmail: "",
+  pmail: vaild_email,
   pno: "",
   docname:"",
   dt:""
@@ -28,7 +28,7 @@ let changehandle=(event)=>{
   let { name, value } = event.target;
   // console.log(name,value);
   setPtnDetail({ ...ptnDetail, [name]: value });
-   setValue({...value,[name]:value})
+  
 };
 
 let submitdata=(event)=>{
@@ -69,6 +69,7 @@ let submitdata=(event)=>{
                         variant="outlined"
                         fullWidth
                         name="pmail"
+                        value={vaild_email}
                         onChange={changehandle}
                       />
                     </Grid>
@@ -91,11 +92,7 @@ let submitdata=(event)=>{
                       />
                     </Grid>
                     <Grid item md={6}>
-                    <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DemoContainer components={['DateTimePicker']}>
-                    <DateTimePicker label="Basic date time picker" />
-                    </DemoContainer>
-                      </LocalizationProvider>
+                    
                     </Grid>
                     <Grid item xs={12}>
                      <Button 
@@ -103,7 +100,7 @@ let submitdata=(event)=>{
                      variant="contained"
                      color="primary"
                      >
-                      Doctor Appointment confirm{" "}
+                      Doctor Appointment confirm
                      </Button>
                     </Grid>
                   </Grid>

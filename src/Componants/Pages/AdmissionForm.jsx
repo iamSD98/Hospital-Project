@@ -16,6 +16,8 @@ import axios from "axios";
 import { Description } from "@mui/icons-material";
 
 const AdmissionForm = () => {
+
+  
   const paperStyle = { padding: "30px 20px", width: 800, margin: "50px auto" };
   let [dept, setDepart] = useState([
     "Opration",

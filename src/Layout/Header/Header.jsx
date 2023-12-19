@@ -13,10 +13,15 @@ import {
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../StyleComponants/Layout_style/Header.css";
 
 const Header = () => {
+
+  let token_value = window.sessionStorage.getItem('tokenValue')
+
+  // console.log("token",token_value);
+  const navigate = useNavigate()
   const [color, setColor] = useState(false);
 
   const changecolor = () => {
@@ -36,7 +41,12 @@ const Header = () => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+let logoutUser =()=>{
+  window.sessionStorage.clear()
 
+  navigate('/')
+
+}
 
   return (
     <AppBar id={color ? "appbar1" : "appbar"}>
@@ -70,16 +80,24 @@ const Header = () => {
             <Link to="/">
               <Tab label="Contact" id="tab" />
             </Link>
-
-          </Box>
-          <Box sx={{ display: { md: "flex", xs: "none" } }}>
-            <Link to="login">
-              <Button id="btn1">Login</Button>
-            </Link>
+            {!window.sessionStorage.getItem('tokenValue') &&
+            <Box>
             <Link to="signUp">
               <Button id="btn2">Sign Up</Button>
             </Link>
+            <Link to="login">
+              <Button id="btn1">Login</Button>
+            </Link>
+            </Box>
+           
+            }
+            {window.sessionStorage.getItem('tokenValue') &&
+              <Button id="btn1" onClick={logoutUser}>Logout</Button>
+            }
           </Box>
+         
+          
+         
           {/* For xs screen */}
           <Box sx={{ display: { md: "none", xs: "flex" } }}>
           <IconButton 
@@ -130,12 +148,20 @@ const Header = () => {
               <Tab label="Contact" id="tab" />
             </Link>
 
-            <Link to="login">
-              <Button id="btn1">Login</Button>
-            </Link>
+            {!window.sessionStorage.getItem('tokenValue') &&
+            <Box>
             <Link to="signUp">
               <Button id="btn2">Sign Up</Button>
             </Link>
+            <Link to="login">
+              <Button id="btn1">Login</Button>
+            </Link>
+            </Box>
+           
+            }
+            {window.sessionStorage.getItem('tokenValue') &&
+              <Button id="btn1" onClick={logoutUser}>Logout</Button>
+            }
             </Stack>   
             </MenuItem>
           </Menu>

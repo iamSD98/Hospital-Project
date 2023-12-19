@@ -55,10 +55,13 @@ const Header = () => {
             <Link to="emergency-dept-page">
               <Tab label="Emergency" id="tab" />
             </Link>
-
-            <Link to="/">
-              <Tab label="Career" id="tab" />
+            <Link to="admission">
+              <Tab label="Admission" id="tab" />
             </Link>
+
+            {/* <Link to="/">
+              <Tab label="Career" id="tab" />
+            </Link> */}
 
             <Link to="department-page">
               <Tab label="Department" id="tab" />

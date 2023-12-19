@@ -86,7 +86,7 @@ const DeptDetails = () => {
                             width: 300,
                             margin: "10px auto",
                           }}
-                          image=""
+                          image="https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg"
                           alt="green iguana"
                         />
                         <CardContent>

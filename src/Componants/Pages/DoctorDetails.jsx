@@ -2,7 +2,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Container, Box, Grid, Typography } from "@mui/material";
+import { Container, Box, Grid, Typography,TextField,Button } from "@mui/material";
+import { Link } from "react-router-dom";
 import "../../StyleComponants/Pages_style/DocDetails.css";
 const DoctorDetails = () => {
   let { did, id } = useParams();
@@ -30,6 +31,9 @@ const DoctorDetails = () => {
         // console.log("Doctor dont fetch", err);
       });
   }, []);
+
+  
+   
 
   return (
     <>
@@ -79,14 +83,20 @@ const DoctorDetails = () => {
                   Qualification: {fetchDoc.qualification}
                   <br/>
                   Experiance: {fetchDoc.experiance}
+                  <br/>
+                  specality:{fetchDoc.specality}
                 </Typography>
+                <Link to={`/doctor-appo/${did}`}>
+                  <Button>Appointment </Button>
+                </Link>
               </Box>
             </Grid>
           </Grid>
         </Box>
+       
       </Container>
     </>
   );
 };
 
-export default DoctorDetails;
+export default DoctorDetails

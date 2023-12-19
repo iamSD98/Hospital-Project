@@ -20,6 +20,7 @@
       "consultant": [
         {
           "doctorname": "DR. Abhijeet Bannerjee",
+          "specality": "General Physican",
           "qualification": "MD(CAL),GENERAL MEDICINE ",
           "experiance": "25 Years",
           "proimg": "",
@@ -27,6 +28,7 @@
         },
         {
           "doctorname": "DR S.K.Sen ",
+          "specality": "General Physican",
           "qualification": "MBBS,MRCP(UK),INTERNAL MEDICINE",
           "experiance": "15YEARS",
           "proimg": "",
@@ -34,6 +36,7 @@
         },
         {
           "doctorname": "DR. Arijit Kumar Basu",
+          "specality": "General Physican",
           "qualification": "MBBS,MD(CAL),GENERAL MEDICINE",
           "experiance": "12 years",
           "proimg": "",
@@ -50,6 +53,7 @@
       "consultant": [
         {
           "doctorname": "DR. Sibananda Dutta",
+          "specality": "Cardiologist",
           "qualification": "MD,DM(CARDIO),MCCP",
           "experiance": "25 Years",
           "proimg": "",
@@ -57,12 +61,14 @@
         },
         {
           "doctorname": "DR. I Ahamed",
+          "specality": "Cardiologist",
           "qualification": "MD,DM(CARDIO)",
           "experiance": "15 Years",
           "docid": "cardio02"
         },
         {
           "doctorname": "DR. Somnath Mukherjee",
+          "specality": "Cardiologist",
           "qualification": "MD (MEDICINE),DM(CARDIO)",
           "experiance": "12 Years",
           "docid": "cardio03"
@@ -78,6 +84,7 @@
       "consultant": [
         {
           "doctorname": "DR.A.J.Kundu",
+          "specality": "Orthopaedic",
           "qualification": "MS (ORTHO)",
           "experiance": "17 Years",
           "proimg": "",
@@ -92,6 +99,7 @@
         },
         {
           "doctorname": "DR.Jagannath Bhattacharya",
+          "specality": "Orthopaedic",
           "qualification": "MS (ORTHO),D(ORTHO)",
           "experiance": "10 Years",
           "proimg": "",
@@ -108,6 +116,7 @@
       "consultant": [
         {
           "doctorname": "DR. Argha Maitra ",
+          "specality": "Gynaecologist",
           "qualification": "MS(OBS & GYNE),DGO",
           "experiance": "20 Years", 
           "proimg": "",
@@ -115,6 +124,7 @@
         },
         {
           "doctorname": "DR.P.K. Nath. Barbhuiya",
+          "specality": "Gynaecologist",
           "qualification": "MBBS,DGO,FICOG",
           "experiance": "12 Years",
            "proimg": "",
@@ -122,6 +132,7 @@
         },
         {
           "doctorname": "DR. Debolina Roy",
+          "specality": "Gynaecologist",
           "qualification": "MBBS,MS(OBS & GYNE),MRCOG",
           "experiance": "15 Years",
            "proimg": "",
@@ -138,6 +149,7 @@
       "consultant": [
         {
           "doctorname": "DR. Abhijeet Sarkar",
+          "specality": "Paediatrics",
           "qualification": "MBBS, DCH(CAL),MRCPCH(PAED)",
           "experiance": "12 Years", 
           "proimg": "",
@@ -145,6 +157,7 @@
         },
         {
           "doctorname": "DR. Subhasis Sarkar",
+          "specality": "Paediatrics",
           "qualification": "MBBS, DCH(CAL)",
           "experiance": "25 Years", 
            "proimg": "",
@@ -152,6 +165,7 @@
         },
         {
           "doctorname": "DR. T.K.Ghosh",
+          "specality": "Paediatrics",
            "qualification": "MBBS, MD(PED),DNB(PED)",
           "experiance": "15 Years",
           "proimg": "",
@@ -168,6 +182,7 @@
       "consultant": [
         {
           "doctorname": "DR.Somnath Gsosh ",
+          "specality": "Surgeon",
           "qualification": "MS,FALS,FICS",
           "experiance": "25 Years", 
           "proimg": "",
@@ -175,6 +190,7 @@
         },
         {
           "doctorname": "DR. Asim Basu",
+          "specality": "Surgeon",
           "qualification": "MBBS,MS(CAL),(SP-LAPROSCOPIC SURGEN)",
           "experiance": "20 Years", 
            "proimg": "",
@@ -182,6 +198,7 @@
         },
         {
           "doctorname": "DR. Shashank Shukla",
+          "specality": "Surgeon",
            "qualification": "MBBS,MNAMS,FIACEG",
           "experiance": "25 Years",
           "proimg": "",
@@ -198,6 +215,7 @@
       "consultant": [
         {
           "doctorname": "DR. Alok pandit",
+          "specality": "Neurologist",
           "qualification": "MD (GENERAL MEDICINE),DM NURO",
           "experiance": "23 Years", 
           "proimg": "",
@@ -205,6 +223,7 @@
         },
         {
           "doctorname": "DR. S Majhi",
+          "specality": "Neurologist",
           "qualification": "MBBS, MCH(NURO),WBUHS",
           "experiance": "21 Years", 
            "proimg": "",
@@ -212,6 +231,7 @@
         },
         {
           "doctorname": "DR. Debaleena Mukherjee ",
+          "specality": "Neurologist",
            "qualification": "MBBS,DM(NUROLOGY)",
           "experiance": "10 Years",
           "proimg": "",
@@ -228,6 +248,7 @@
       "consultant": [
         {
           "doctorname": "DR.Rajen Pandey",
+          "specality": "Nephrologist",
           "qualification": "MD,DM(NEPHRO),PGT(chandigarh)",
           "experiance": "16 Years", 
           "proimg": "",
@@ -235,6 +256,7 @@
         },
         {
           "doctorname": "DR.Satyaki Dey ",
+          "specality": "Nephrologist",
           "qualification": "DND(MEDICINE),DND(NEPHRO)",
           "experiance": "15 Years", 
            "proimg": "",
@@ -242,6 +264,7 @@
         },
         {
           "doctorname": "DR sharmila Thakur",
+          "specality": "Nephrologist",
            "qualification": "MBBS,MD,DNB",
           "experiance": "8 Years",
           "proimg": "",
@@ -258,6 +281,7 @@
       "consultant": [
         {
           "doctorname": "DR. Tirthankar Bhaumik ",
+          "specality": "Dentist",
           "qualification": "BDS,MDS",
           "experiance": "8 Years", 
           "proimg": "",
@@ -265,6 +289,7 @@
         },
         {
           "doctorname": "DR.Syantani Dutta ",
+          "specality": "Dentist",
           "qualification": "BDS",
           "experiance": "7 Years", 
            "proimg": "",
@@ -272,6 +297,7 @@
         },
         {
           "doctorname": "DR.Saranik Sarkar ",
+          "specality": "Dentist",
            "qualification": "BDS,MDS",
           "experiance": "10 Years",
           "proimg": "",

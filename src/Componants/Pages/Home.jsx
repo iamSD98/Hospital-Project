@@ -124,11 +124,13 @@ const Home = () => {
                     direction={"column"}
                     sx={{ display: { md: "none", xs: "flex" } }}
                   >
+                    <Link to={'/emergency-dept-page'}>
                     <Button id="abt-btn-xs">
                       Emargency
                       <ArrowRightAltIcon style={{ color: "black" }} />
                     </Button>
-                    <Link to="user/authentication">
+                    </Link>
+                    <Link to="/appointment">
                       <Button id="abt-btn-xs">
                         Appointment
                         <ArrowRightAltIcon style={{ color: "black" }} />

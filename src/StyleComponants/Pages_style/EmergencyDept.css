@@ -25,8 +25,9 @@
     position: relative;
   }
 #em-wrapper::after{
-      content: ' We have best doctor in our city';
-      color: black;
+      content: ' We have best Emergency Services in the city';
+      color: rgb(65, 23, 219);
+      text-shadow: 0px 2px 5px black;
       text-align: center;
       font-size: 40px;
       height: 10%;

@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../StyleComponants/Layout_style/Header.css";
@@ -80,7 +81,15 @@ let logoutUser =()=>{
             <Link to="/">
               <Tab label="Contact" id="tab" />
             </Link>
-            {!window.sessionStorage.getItem('tokenValue') &&
+            <Link to="ptndetails">
+            <AssignmentTurnedInIcon id="icon-tab"/> 
+              
+            </Link>
+
+
+            
+          </Box>
+          {!window.sessionStorage.getItem('tokenValue') &&
             <Box>
             <Link to="signUp">
               <Button id="btn2">Sign Up</Button>
@@ -94,8 +103,6 @@ let logoutUser =()=>{
             {window.sessionStorage.getItem('tokenValue') &&
               <Button id="btn1" onClick={logoutUser}>Logout</Button>
             }
-          </Box>
-         
           
          
           {/* For xs screen */}

@@ -14,6 +14,7 @@ import Career from "../Componants/Pages/Career";
 import AdmissionForm from "../Componants/Pages/AdmissionForm";
 import DocAppoint from "../Componants/Pages/DocAppoint";
 import ProtectedRoute from "./ProtectedRoute";
+import PtnDetails from "../Componants/Pages/PtnDetails";
 
 const Routing = () => {
   return (
@@ -25,14 +26,15 @@ const Routing = () => {
         <Route path='department-page' element={<Department/>}/>
         <Route path='department-page/deptdetails-page/:id' element={<DeptDetails/>}/>
         <Route path='department-page/deptdetails-page/:id/doctordetails-page/:did' element={<DoctorDetails/>}/>
-        <Route path='/doctor-appo/:did' element={<DocAppoint/>}/>
+        
         <Route path='emergency-dept-page' element={<EmergencyDept/>}/>
         <Route path='academics' element={<Career/>}/>
         
              
         <Route element={<ProtectedRoute/>}>  
         <Route path='admission' element={<AdmissionForm/>}/>
-       
+        <Route path='/doctor-appo/:appoid' element={<DocAppoint/>}/>
+        <Route path='ptndetails' element={<PtnDetails/>}/>
         </Route>  
         <Route path="login" element={<Login />}></Route>
         <Route path="signUp" element={<Reg />}></Route>

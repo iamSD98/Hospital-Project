@@ -25,13 +25,14 @@ const Routing = () => {
         <Route path='department-page' element={<Department/>}/>
         <Route path='department-page/deptdetails-page/:id' element={<DeptDetails/>}/>
         <Route path='department-page/deptdetails-page/:id/doctordetails-page/:did' element={<DoctorDetails/>}/>
+        <Route path='/doctor-appo/:did' element={<DocAppoint/>}/>
         <Route path='emergency-dept-page' element={<EmergencyDept/>}/>
         <Route path='academics' element={<Career/>}/>
         
              
         <Route element={<ProtectedRoute/>}>  
         <Route path='admission' element={<AdmissionForm/>}/>
-        <Route path='/doctor-appo/:did' element={<DocAppoint/>}/>
+       
         </Route>  
         <Route path="login" element={<Login />}></Route>
         <Route path="signUp" element={<Reg />}></Route>

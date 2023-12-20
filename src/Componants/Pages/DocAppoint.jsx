@@ -11,27 +11,7 @@ const DocAppoint = () => {
   let { did } = useParams();
   console.log("doctor id", did);
   
-  let docappo_url = "http://localhost:4000/doctors";
-
-  let [fetchdoc, setDoc] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(`${docappo_url}/${did}`)
-      .then((res) => {
-        const doctorData = res.data.consultant;
-
-        console.log("The fetch doctor", doctorData);
-
-        // // Update state with the fetched data
-        // setDoc({ ...fetchdoc, doctorname: doctorData.doctoname });
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log("Doctor dont fetch", err);
-      });
-      
-  }, [did, docappo_url]);
+ 
  
 
   let [ptnDetail, setPtnDetail] = useState({
@@ -102,7 +82,7 @@ let changeDateTime =(event)=>{
                 variant="outlined"
                 fullWidth
                 name="pmail"
-                value={vaild_email}
+                // value={vaild_email}
                 onChange={changehandle}
               />
             </Grid>
@@ -120,7 +100,7 @@ let changeDateTime =(event)=>{
                 label="Doctor Name"
                 variant="outlined"
                 fullWidth
-                value={fetchdoc.doctorname}
+                
                 name="docname"
                 onChange={changehandle}
               />

@@ -15,3 +15,6 @@
     background-position: center;border-top-left-radius: 20px;border-bottom-left-radius: 20px;}
 
 #link-text{font-family: 'Kanit', sans-serif;font-weight: 300;text-align: center;transform: translateY(-8px);}
+
+#profile-pic{cursor: pointer;background-color: blue;color: white;border-radius: 20px;padding: 10px;
+    font-family: 'Orbitron', sans-serif;font-weight: 500}

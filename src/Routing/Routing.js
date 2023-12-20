@@ -15,6 +15,7 @@ import AdmissionForm from "../Componants/Pages/AdmissionForm";
 import DocAppoint from "../Componants/Pages/DocAppoint";
 import ProtectedRoute from "./ProtectedRoute";
 import PtnDetails from "../Componants/Pages/PtnDetails";
+import Profile from "../Componants/Auth/Profile";
 
 const Routing = () => {
   return (
@@ -35,9 +36,11 @@ const Routing = () => {
         <Route path='admission' element={<AdmissionForm/>}/>
         <Route path='/doctor-appo/:appoid' element={<DocAppoint/>}/>
         <Route path='ptndetails' element={<PtnDetails/>}/>
+        
         </Route>  
         <Route path="login" element={<Login />}></Route>
         <Route path="signUp" element={<Reg />}></Route>
+        <Route path="profile" element={<Profile/>}/>
       </Routes>
       <Footer/>
     </>

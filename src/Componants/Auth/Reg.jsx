@@ -6,6 +6,9 @@ import {
   TextField,
   Stack,
   InputAdornment,
+  FormControl,
+  FormLabel,
+  Input,
 } from "@mui/material";
 import React, { useState } from "react";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
@@ -40,6 +43,8 @@ const Reg = () => {
     email: true,
     password: true,
   });
+
+  let [imgState,setImgstate]=useState() 
 
   const [passwordType, setPasswordType] = useState("password");
   const togglePassword = () => {
@@ -298,6 +303,11 @@ const Reg = () => {
                     >
                       Sign Up
                     </Button>
+                    <label htmlFor="">Profile Pic</label>
+                    <Input accept="image/*" id="profile-pic" type="file" hidden
+                    
+                    onChange={(event)=>setImgstate(event.target.files[0])}
+                    />
                     
                   </form>
                   <h4 id="link-text">

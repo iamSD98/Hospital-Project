@@ -26,6 +26,7 @@ import "../../StyleComponants/Layout_style/Header.css";
 
 const Header = () => {
   let token_value = window.sessionStorage.getItem("tokenValue");
+  let profile_img=window.localStorage.getItem("profile_image")
 
   // console.log("token",token_value);
   const navigate = useNavigate();
@@ -129,7 +130,7 @@ const Header = () => {
               >
                 <Avatar
                   alt="Remy Sharp"
-                  src="/static/images/avatar/1.jpg"
+                  src={profile_img}
                   onClick={handleToggle}
                   sx={{ cursor: "pointer" }}
                 ></Avatar>
@@ -163,7 +164,8 @@ const Header = () => {
                         <MenuList > 
                           <MenuItem id='menu'>
                             <Stack sx={{backgroundColor:'white'}}>
-                              <Link to="/">
+                              
+                              <Link to="profile">
                                 <Tab label="View Profile" id="tab" />
                               </Link>
 

@@ -17,3 +17,5 @@
 #btn2{background-color: skyblue;color: black;border: 2px solid rgb(25, 178, 239);margin: 6px;font-family: 'Kanit', sans-serif;}
 
 #btn2:hover{background-color: rgb(25, 178, 239);color: white;border: 2px solid skyblue;}
+
+#menu:hover{background-color: white;}

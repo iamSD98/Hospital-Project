@@ -26,6 +26,11 @@ import Grow from "@mui/material/Grow";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../StyleComponants/Layout_style/Header.css";
+import Drawer from '@mui/material/Drawer';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import {styled, useTheme } from '@mui/material/styles';
+
 
 const Header = () => {
   
@@ -36,6 +41,9 @@ const Header = () => {
   // console.log("token",token_value);
   const navigate = useNavigate();
   const [color, setColor] = useState(false);
+
+
+
 
   const changecolor = () => {
     if (window.scrollY > 80) {
@@ -75,6 +83,28 @@ const Header = () => {
   const handleClose = (event) => {
     setOpen(false);
   };
+
+  //Drawer part
+
+  const theme = useTheme();
+
+const drawerWidth = 200;
+
+const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+  const DrawerHeader = styled('div')(({ theme }) => ({
+    display: 'flex',
+    alignItems: 'center',
+    padding: theme.spacing(0, 2),
+    // necessary for content to be below app bar
+    ...theme.mixins.toolbar,
+    justifyContent: 'flex-start',
+  }));
 
   return (
     <AppBar id={color ? "appbar1" : "appbar"}>
@@ -167,85 +197,54 @@ const Header = () => {
             >
               <MenuIcon />
             </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              <MenuItem>
-                <Stack sx={{ display: "grid", justifyItems: "center" }} id='s1'>
-                  <Link to="/">
-                    <Tab label="Home" id="tab" />
-                  </Link>
 
-                  <Link to="emergency-dept-page">
-                    <Tab label="Emergency" id="tab" />
-                  </Link>
+            <Drawer
+      sx={{
+        width: drawerWidth,
+        flexShrink: 1,
+        '& .MuiDrawer-paper': {
+          width: drawerWidth, 
+        },
+        display:{xs:'flex',md:'none'}
+      }}
+      variant="persistent"
+      anchor="right"
+      open={open}
+    >
+      <DrawerHeader sx={{display:{xs:'flex',md:'none'}}}> 
+      <IconButton onClick={handleDrawerClose} id="ico">
+          {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+        </IconButton>
+        </DrawerHeader>
+            <Typography textAlign="left" component="div">
+              <Stack direction="column" spacing={6}>
+              <Link to="/">
+              <Tab label="Home" id="tab" />
+            </Link>
+            <Link to="emergency-dept-page">
+              <Tab label="Emergency" id="tab" />
+            </Link>
+            <Link to="admission">
+              <Tab label="Admission" id="tab" />
+            </Link>
 
-                  <Link to="/">
-                    <Tab label="Career" id="tab" />
-                  </Link>
+            {/* <Link to="/">
+              <Tab label="Career" id="tab" />
+            </Link> */}
 
-                  <Link to="department-page">
-                    <Tab label="Department" id="tab" />
-                  </Link>
+            <Link to="department-page">
+              <Tab label="Department" id="tab" />
+            </Link>
 
-                  <Link to="/">
-                    <Tab label="Contact" id="tab" />
-                  </Link>
-                  </Stack>
-                  {!window.sessionStorage.getItem("tokenValue") && (
-                    <Stack>
-                      <Link to="signUp">
-                        <Button id="btn2">Sign Up</Button>
-                      </Link>
-                      <Link to="login">
-                        <Button id="btn1">Login</Button>
-                      </Link>
-                    </Stack>
-                  )}
-                  {window.sessionStorage.getItem("tokenValue") && (
-                    <Stack >
-                    <ButtonGroup variant="contained" sx={{ borderRadius: 50 }}>
-                      <Avatar
-                        
-                        
-                        onClick={handleToggle1}
-                        sx={{ cursor: "pointer" }}
-                      ><img src={pro_img} alt=""/></Avatar>
-                    </ButtonGroup>
-                    <Popper open={open} id="popper1" transition disablePortal>
-                      {({ TransitionProps }) => (
-                        <Grow {...TransitionProps}>
-                          <Paper>
-                            <ClickAwayListener onClickAway={handleClose}>
-                              <MenuList>
-                                <Tab label="Profile" onClick={handleClose} id="tab" />
-      
-                                <Tab label="logout" onClick={logoutUser} id="tab"/>
-                              </MenuList>
-                            </ClickAwayListener>
-                          </Paper>
-                        </Grow>
-                      )}
-                    </Popper>
-                    </Stack>
-                  )}
-              </MenuItem>
-            </Menu>
+            <Link to="/">
+              <Tab label="Contact" id="tab" />
+            </Link>
+            <Link to="ptndetails">
+              <AssignmentTurnedInIcon id="icon-tab" />
+            </Link>              </Stack>
+            </Typography>
+      </Drawer>
+           
           </Box>
         </Toolbar>
       </Container>

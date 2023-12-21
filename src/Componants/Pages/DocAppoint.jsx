@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Box, Container, Grid, Paper, TextField, Button } from "@mui/material";
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 
 import axios from "axios";
 import { LocalLaundryService } from "@mui/icons-material";
 
 const DocAppoint = () => {
-  let vaild_email = window.sessionStorage.getItem("email");
+  let user_email = window.sessionStorage.getItem("email");
+  let user_Firstname= window.sessionStorage.getItem("fname");
+  let user_Lastname = window.sessionStorage.getItem("lname");
   // console.log(valid_email);
 
   let { did,appoid } = useParams();
@@ -37,9 +44,12 @@ const DocAppoint = () => {
  let user_api="http://localhost:4000/users"
 
   let [ptnDetail, setPtnDetail] = useState({
-    pname:"",
+    pfname:user_Firstname,
+    plname:user_Lastname,
     padd: "",
-    pmail: vaild_email,
+    pmail: user_email,
+    pgen:"",
+    page:"",
     pno: "",
     docname: "",
     date: "",
@@ -73,10 +83,13 @@ let changeDateTime =(event)=>{
     console.log("the form value", ptnDetail);
 
     let userdata={
-      ptname: ptnDetail.pname,
+      pfname: ptnDetail.pfname,
+      plname:ptnDetail.plname,
       padd:ptnDetail.padd ,
       pmail:ptnDetail.pmail,
-      pno:ptnDetail.ptnDetail ,
+      pgen:ptnDetail.pgen,
+      page:ptnDetail.page,
+      pno:ptnDetail.pno ,
       docname:ptnDetail.docname ,
       date:ptnDetail.date ,
       time:ptnDetail.time ,
@@ -113,10 +126,21 @@ let changeDateTime =(event)=>{
           <Grid container spacing={2}>
             <Grid item md={6}>
               <TextField
-                label="Patient Name"
+                label="First Name"
                 variant="outlined"
                 fullWidth
-                name="pname"
+                name="pfname"
+                value={user_Firstname}
+                onChange={changehandle}
+              />
+            </Grid>
+            <Grid item md={6}>
+              <TextField
+                label="Last Name"
+                variant="outlined"
+                fullWidth
+                name="plname"
+                value={user_Lastname}
                 onChange={changehandle}
               />
             </Grid>
@@ -135,13 +159,38 @@ let changeDateTime =(event)=>{
                 variant="outlined"
                 fullWidth
                 name="pmail"
-                value={vaild_email}
+                value={user_email}
                 onChange={changehandle}
               />
             </Grid>
             <Grid item md={6}>
               <TextField
+                label="Age"
+                type="number"
+                variant="outlined"
+                fullWidth
+                name="page"
+                onChange={changehandle}
+              />
+            </Grid>
+            <Grid item md={6}>
+            <FormControl onChange={changehandle} name='pgen'>
+      <FormLabel id="demo-row-radio-buttons-group-label" >Gender</FormLabel>
+      <RadioGroup
+        row
+        aria-labelledby="demo-row-radio-buttons-group-label"
+        name="pgen"
+      >
+        <FormControlLabel  value="female" control={<Radio />} label="Female" />
+        <FormControlLabel  value="male" control={<Radio />} label="Male" />
+       
+      </RadioGroup>
+    </FormControl>
+            </Grid>
+            <Grid item md={6}>
+              <TextField
                 label="Phone Number"
+                type="number"
                 variant="outlined"
                 fullWidth
                 name="pno"

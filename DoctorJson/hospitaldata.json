@@ -352,49 +352,29 @@
   "users": [
     {
       "id": 1,
-      "ptname": "Sibananda",
+      "pfname": "Sibananda",
+      "plname": "sarkar",
       "padd": "howrah",
       "pmail": "abc@gmail.com",
+      "pgen": "MALE",
+      "page": "50",
       "pno": "985624",
       "docname": "ssdey",
       "date": "10/23/65",
       "time": "12:45"
     },
     {
-      "ptname": "siddhartha",
-      "padd": "howrah",
-      "pmail": "ss1@gmail.com",
-      "docname": "s s das",
-      "date": "24-12-2023",
-      "time": "14:04",
-      "id": 2
-    },
-    {
-      "ptname": "subham",
+      "pfname": "Subham",
+      "plname": "Sid",
       "padd": "kolkata",
-      "pmail": "ss1@gmail.com",
-      "docname": "Abhijeet Sarkr",
-      "date": "11-12-2023",
-      "time": "16:09",
-      "id": 3
-    },
-    {
-      "ptname": "Soumajit",
-      "padd": "Durgapur",
-      "pmail": "ss1@gmail.com",
+      "pmail": "yy1@gmail.com",
+      "pgen": "male",
+      "page": "24",
+      "pno": "9865321475",
       "docname": "Sabyasachi Dey",
-      "date": "29-12-2023",
-      "time": "19:16",
-      "id": 4
-    },
-    {
-      "ptname": "Dipanwita",
-      "padd": "Durgapur",
-      "pmail": "ss1@gmail.com",
-      "docname": "s s das",
-      "date": "24-12-2023",
-      "time": "18:25",
-      "id": 5
+      "date": "21-12-2023",
+      "time": "15:41",
+      "id": 2
     }
   ]
 }

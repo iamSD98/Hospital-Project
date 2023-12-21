@@ -9,6 +9,9 @@ import {
   MenuItem,
   Menu,
   Stack,
+  FormControl,
+  Select,
+  InputLabel,
 } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -25,9 +28,11 @@ import { Link, useNavigate } from "react-router-dom";
 import "../../StyleComponants/Layout_style/Header.css";
 
 const Header = () => {
-  let token_value = window.sessionStorage.getItem("tokenValue");
-  let profile_img=window.localStorage.getItem("profile_image")
-
+  
+  let pro_img = window.sessionStorage.getItem("pro_image")
+  let profile_name = window.sessionStorage.getItem("fname")
+  console.log("profile:",pro_img);
+  console.log("profile:",profile_name);
   // console.log("token",token_value);
   const navigate = useNavigate();
   const [color, setColor] = useState(false);
@@ -55,31 +60,27 @@ const Header = () => {
     navigate("/");
   };
   //Dropdown part
-  const [open, setOpen] = React.useState(false);
-  const anchorRef = React.useRef(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
 
-  const handleMenuItemClick = (event, index) => {
-    setSelectedIndex(index);
-    setOpen(false);
-  };
+  const [open, setOpen] = React.useState(false);
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
 
-  const handleClose = (event) => {
-    if (anchorRef.current && anchorRef.current.contains(event.target)) {
-      return;
-    }
+  const handleToggle1 = () => {
+    setOpen((prevOpen) => !prevOpen);
+   
+  };
 
+  const handleClose = (event) => {
     setOpen(false);
   };
+
   return (
     <AppBar id={color ? "appbar1" : "appbar"}>
       <Container maxWidth="x1">
         <Toolbar>
-          <Typography sx={{ flexGrow: 4 }}>
+          <Typography sx={{ flexGrow: 5 }}>
             <Link to="/">
               <img src="Assets/img/logo.png" alt="Logo" />
             </Link>
@@ -111,8 +112,9 @@ const Header = () => {
               <AssignmentTurnedInIcon id="icon-tab" />
             </Link>
           </Box>
+
           {!window.sessionStorage.getItem("tokenValue") && (
-            <Box>
+            <Box sx={{ flexGrow: 1, display: { md: "flex", xs: "none" }  }}>
               <Link to="signUp">
                 <Button id="btn2">Sign Up</Button>
               </Link>
@@ -121,71 +123,36 @@ const Header = () => {
               </Link>
             </Box>
           )}
+
           {window.sessionStorage.getItem("tokenValue") && (
-            <Box sx={{flexGrow:1}}>
-              <ButtonGroup
-                ref={anchorRef}
-                aria-label="split button"
-                sx={{ borderRadius: 80 }}
-              >
+            <Box sx={{ flexGrow: 2, display: { md: "flex", xs: "none" }  }} id='avater'>
+              <ButtonGroup variant="contained" sx={{ borderRadius: 50 }}>
                 <Avatar
-                  alt="Remy Sharp"
-                  src={profile_img}
+                  alt={profile_name}
+                  src={pro_img}
                   onClick={handleToggle}
                   sx={{ cursor: "pointer" }}
                 ></Avatar>
               </ButtonGroup>
-              <Popper
-                 sx={{
-                  paddingTop:1,
-                  
-                 }}
-                open={open}
-                anchorEl={anchorRef.current}
-                transition
-                disablePortal
-              >
-                {({ TransitionProps, placement }) => (
-                  <Grow
-                    {...TransitionProps}
-                    style={{
-                      transformOrigin:
-                        placement === "bottom" ? "center top" : "center bottom",
-                    }}
-                  >
-                    <Box 
-                    sx={{
-                      backgroundColor:'white',
-                      boxShadow:'0px 8px 10px skyblue',
-                      borderBottomLeftRadius:'10px',
-                      borderBottomRightRadius:'10px',
-                      }}>
+              <Popper open={open} id="popper" transition sx={{display: { md: "flex", xs: "none" } }}>
+                {({ TransitionProps }) => (
+                  <Grow {...TransitionProps}>
+                    <Paper>
                       <ClickAwayListener onClickAway={handleClose}>
-                        <MenuList > 
-                          <MenuItem id='menu'>
-                            <Stack sx={{backgroundColor:'white'}}>
-                              
-                              <Link to="profile">
-                                <Tab label="View Profile" id="tab" />
-                              </Link>
+                        <MenuList>
+                          <Link to='profile'>
+                          <Tab label="Profile" onClick={handleClose} id="tab" />
+                          </Link>
+                          
 
-                              {/* <Link to="/">
-                                <Tab label="appointment" id="tab" />
-                              </Link> */}
-
-                              <Tab
-                                label="logout"
-                                id="tab"
-                                onClick={logoutUser}
-                              />
-                            </Stack>
-                          </MenuItem>
+                          <Tab label="logout" onClick={logoutUser} id="tab"/>
                         </MenuList>
                       </ClickAwayListener>
-                    </Box>
+                    </Paper>
                   </Grow>
                 )}
               </Popper>
+              
             </Box>
           )}
 
@@ -219,7 +186,7 @@ const Header = () => {
               }}
             >
               <MenuItem>
-                <Stack sx={{ display: "grid", justifyItems: "center" }}>
+                <Stack sx={{ display: "grid", justifyItems: "center" }} id='s1'>
                   <Link to="/">
                     <Tab label="Home" id="tab" />
                   </Link>
@@ -239,26 +206,44 @@ const Header = () => {
                   <Link to="/">
                     <Tab label="Contact" id="tab" />
                   </Link>
-
+                  </Stack>
                   {!window.sessionStorage.getItem("tokenValue") && (
-                    <Box>
+                    <Stack>
                       <Link to="signUp">
                         <Button id="btn2">Sign Up</Button>
                       </Link>
                       <Link to="login">
                         <Button id="btn1">Login</Button>
                       </Link>
-                    </Box>
+                    </Stack>
                   )}
                   {window.sessionStorage.getItem("tokenValue") && (
-                    <Box>
-                      <Avatar sx={{ bgcolor: "black" }}></Avatar>
-                      <Button id="btn1" onClick={logoutUser}>
-                        Logout
-                      </Button>
-                    </Box>
+                    <Stack >
+                    <ButtonGroup variant="contained" sx={{ borderRadius: 50 }}>
+                      <Avatar
+                        
+                        
+                        onClick={handleToggle1}
+                        sx={{ cursor: "pointer" }}
+                      ><img src={pro_img} alt=""/></Avatar>
+                    </ButtonGroup>
+                    <Popper open={open} id="popper1" transition disablePortal>
+                      {({ TransitionProps }) => (
+                        <Grow {...TransitionProps}>
+                          <Paper>
+                            <ClickAwayListener onClickAway={handleClose}>
+                              <MenuList>
+                                <Tab label="Profile" onClick={handleClose} id="tab" />
+      
+                                <Tab label="logout" onClick={logoutUser} id="tab"/>
+                              </MenuList>
+                            </ClickAwayListener>
+                          </Paper>
+                        </Grow>
+                      )}
+                    </Popper>
+                    </Stack>
                   )}
-                </Stack>
               </MenuItem>
             </Menu>
           </Box>

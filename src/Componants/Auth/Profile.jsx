@@ -24,19 +24,23 @@ useEffect(()=>{
   .then(res=>{
     console.log("Get value for profile",res);
     
-    let base_url = "https://wtsacademy.dedicateddevelopers.us/";
-             let folder_path = "uploads/user/profile_pic/";
-             let img_url = base_url + folder_path + res.payload.data.profile_pic;
-             window.localStorage.setItem('profile_image',img_url)
-  
-    // setUser({...res.payload.data,profile_pic:img_url})
+      let base_url = "https://wtsacademy.dedicateddevelopers.us/";
+      let folder_path = "uploads/user/profile_pic/";
+      let img_url = base_url + folder_path + res.payload.data.profile_pic;
+      
+     
+
+      // setUser({...res.payload.data,profile_pic:img_url})
 
     setUser({...single_user,
-                first_name:res.payload.data.first_name,
-               last_name:res.payload.data.last_name,
-                email:res.payload.data.email,
-               profile_pic:img_url
-           })
+      first_name:res.payload.data.first_name,
+     last_name:res.payload.data.last_name,
+      email:res.payload.data.email,
+     profile_pic:img_url
+ })
+
+   
+  
     
 
   })

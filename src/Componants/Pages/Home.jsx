@@ -39,7 +39,7 @@ const Home = () => {
                   We Care About
                   <br />
                   <span style={{ fontSize: "60px" }}>Your</span>{" "}
-                  <span style={{ color: "crimson" }}>Health</span>
+                  <span style={{ color: "crimson",fontSize: "75px"  }}>Health</span>
                 </Typography>
               </Box>
               <Box

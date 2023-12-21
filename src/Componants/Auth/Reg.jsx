@@ -46,6 +46,8 @@ const Reg = () => {
 
   let [imgState,setImgstate]=useState() 
 
+  let [user,setUser]=useState(null)
+
   const [passwordType, setPasswordType] = useState("password");
   const togglePassword = () => {
     if (passwordType === "password") {
@@ -129,12 +131,16 @@ const Reg = () => {
     registarData.append("last_name",Inputstate.lname);
     registarData.append("email",Inputstate.email);
     registarData.append("password",Inputstate.password);
-
+    registarData.append("profile_pic",imgState);
+    
     dispatch(sign_Up(registarData))
       .then(res=>{
         console.log("Response from API", res);
-        alert('user Registar')
-        navigate("/login");
+        if (res.payload.status===200) {
+          setUser("Registration Done")
+          navigate("/login");
+        }
+        
       })
       .catch(err=>{
         console.log("Reg failed",err);
@@ -155,7 +161,7 @@ const Reg = () => {
                     <h2>Sign Up</h2>
                   </Grid>
                   <form onSubmit={submitHandle} id="r-f1">
-                    
+                  {user && <Stack style={{ color: 'red',paddingBottom:5 }}>{user}</Stack>}
                     <Grid container spacing={2} my={2}>
                       <Grid item md={6}>
                         <TextField
@@ -304,7 +310,7 @@ const Reg = () => {
                       Sign Up
                     </Button>
                     <label htmlFor="">Profile Pic</label>
-                    <Input accept="image/*" id="profile-pic" type="file" hidden
+                    <Input accept="image/*" id="profile-pic" type="file"
                     
                     onChange={(event)=>setImgstate(event.target.files[0])}
                     />

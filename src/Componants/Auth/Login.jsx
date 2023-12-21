@@ -95,8 +95,13 @@ const Login = () => {
       console.log("Response of API",res)
       if(res.payload.status===200)
       {
+        let base_url = "https://wtsacademy.dedicateddevelopers.us/";
+      let folder_path = "uploads/user/profile_pic/";
+      let img_url = base_url + folder_path + res.payload.data.profile_pic;
         window.sessionStorage.setItem("tokenValue",res.payload.token)
         window.sessionStorage.setItem("email",res.payload.data.email)
+        window.sessionStorage.setItem('pro_image',img_url)
+        window.sessionStorage.setItem('fname',res.payload.data.first_name)
           navigate("/")
           
       }

@@ -357,7 +357,6 @@
       "padd": "howrah",
       "pmail": "abc@gmail.com",
       "pgen": "MALE",
-      "page": "50",
       "pno": "985624",
       "docname": "ssdey",
       "date": "10/23/65",
@@ -366,14 +365,13 @@
     {
       "pfname": "Subham",
       "plname": "Sid",
-      "padd": "kolkata",
+      "padd": "Kolkata",
       "pmail": "yy1@gmail.com",
-      "pgen": "male",
-      "page": "24",
-      "pno": "9865321475",
-      "docname": "Sabyasachi Dey",
-      "date": "21-12-2023",
-      "time": "15:41",
+      "pgen": "female",
+      "pno": "9874566011",
+      "docname": "A.Das",
+      "date": "23-12-2023",
+      "time": "01:16",
       "id": 2
     }
   ]

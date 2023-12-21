@@ -1,10 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { useDispatch } from "react-redux";
 import { profile_page } from "../../Redux/Slice/AuthSlice";
 import "../../StyleComponants/Auth_style/Profile.css";
-import { Box, Container, Grid, Typography } from "@mui/material";
-import CameraAltIcon from "@mui/icons-material/CameraAlt";
+import {
+  Box,
+  Container,
+  FormControl,
+  FormLabel,
+  Grid,
+  IconButton,
+  Input,
+  TextField,
+  Typography,
+} from "@mui/material";
+import CameraAltRoundedIcon from "@mui/icons-material/CameraAltRounded";
 import axios from "axios";
 
 import Table from "@mui/material/Table";
@@ -57,24 +67,36 @@ const Profile = () => {
       });
   }, [dispatch]);
 
-  //For patient details informations 
+  //For patient details informations
 
-  let [ptnDetail,setPtnDetail]=useState([]);
-  let user_api="http://localhost:4000/users"
+  let [ptnDetail, setPtnDetail] = useState([]);
+  let user_api = "http://localhost:4000/users";
 
-  useEffect(()=>{
-    axios.get(user_api)
-    .then(res=>{
-        setPtnDetail(res.data)
-        console.log("user fetch",res.data);
-    })
-    .catch(err=>{
-        console.log("usrr not ffetch",err);
-    })
-},[])
+  useEffect(() => {
+    axios
+      .get(user_api)
+      .then((res) => {
+        setPtnDetail(res.data);
+        console.log("user fetch", res.data);
+      })
+      .catch((err) => {
+        console.log("usrr not ffetch", err);
+      });
+  }, []);
 
+  //for upload profie pic
+  let [imgState, setImgstate] = useState();
 
+  const fileInputRef = useRef(null);
 
+  const handleFileSelect = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleFileUpload = (e) => {
+    setImgstate(e.target.files[0]);
+    console.log("Selected File:", setImgstate);
+  };
 
   return (
     <>
@@ -83,13 +105,28 @@ const Profile = () => {
           <Grid container spacing={2}>
             <Grid item md={4}>
               <Box id="p-bg">
-                <Box>
-                  <img
-                    src={single_user.profile_pic}
-                    alt="p-img"
-                    id="profile-img"
-                  />
-                  <CameraAltIcon />
+                <Box className="profile-pic">
+                  <Box id="pic">
+                    <img
+                      src={single_user.profile_pic}
+                      alt="p-img"
+                      id="profile-img"
+                    />
+                  </Box>
+                  <Box>
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      style={{ display: "none" }}
+                      onChange={handleFileUpload}
+                    />
+                    <IconButton
+                      onClick={handleFileSelect}
+                      id="handle"
+                    >
+                      <CameraAltRoundedIcon />
+                    </IconButton>
+                  </Box>
                 </Box>
                 <Box>
                   <Typography
@@ -98,36 +135,45 @@ const Profile = () => {
                       fontSize: "30px",
                       textAlign: "center",
                       paddingTop: 5,
+                      paddingBottom:10
                     }}
                   >
                     {single_user.first_name}
                     <span style={{ paddingLeft: 3 }}>
-                      {" "}
-                      {single_user.last_name}{" "}
+                      {single_user.last_name}
                     </span>
+                    <br/>
+                      {single_user.email}
                   </Typography>
                 </Box>
               </Box>
             </Grid>
             <Grid item md={8}>
-              <Box>
-                {
-                  ptnDetail.map((post)=>(
-                    <Box key={post.id}> 
-                    <p>name:{post.pfname}</p>
-                    <p>age:{post.page}</p>
+            <h1 style={{textAlign:'center',fontFamily:'kanit'}}>My Appointments</h1>
+              <Grid container spacing={6}>
+              
+                {ptnDetail.map((post) => (
+                  <Grid items md={6} key={post.id}>
+                    <Box id='card'>
+                    <p>Doctor Name: {post.docname}</p>
+                    <p>Address: {post.padd}</p>
+                    <p>Gender:{post.pgen}</p>
+                    <p>Phone:{post.pno}</p>
+                    <p>Date:{post.date}</p>
+                    <p>Time:{post.time}</p>
 
-
-                    </Box>
-                  ))
-                }
-              </Box>
+                    <Button variant="contained" color="primary">Edit</Button>
+                    <span><Button variant="contained" sx={{backgroundColor:'red',marginLeft:'2%'}} >Delete</Button></span>
+                    </Box>                 
+                  </Grid>
+                ))}
+              </Grid>
             </Grid>
           </Grid>
         </Box>
       </Container>
     </>
   );
-};
+}
 
 export default Profile;

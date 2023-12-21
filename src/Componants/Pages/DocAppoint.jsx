@@ -6,7 +6,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-
+import '../../StyleComponants/Pages_style/DocAppoint.css'
 import axios from "axios";
 import { LocalLaundryService } from "@mui/icons-material";
 
@@ -119,9 +119,9 @@ let changeDateTime =(event)=>{
 
   return (
     <>
-      <h1>Doctor appointment form</h1>
+      
       <Box id="app-form">
-        <h2>Appointment Form</h2>
+        <h2 style={{textAlign:'center'}}>Appointment Form</h2>
         <form onSubmit={submitdata}>
           <Grid container spacing={2}>
             <Grid item md={6}>
@@ -163,16 +163,7 @@ let changeDateTime =(event)=>{
                 onChange={changehandle}
               />
             </Grid>
-            <Grid item md={6}>
-              <TextField
-                label="Age"
-                type="number"
-                variant="outlined"
-                fullWidth
-                name="page"
-                onChange={changehandle}
-              />
-            </Grid>
+           
             <Grid item md={6}>
             <FormControl onChange={changehandle} name='pgen'>
       <FormLabel id="demo-row-radio-buttons-group-label" >Gender</FormLabel>
@@ -190,7 +181,7 @@ let changeDateTime =(event)=>{
             <Grid item md={6}>
               <TextField
                 label="Phone Number"
-                type="number"
+                type="tel"
                 variant="outlined"
                 fullWidth
                 name="pno"
@@ -222,7 +213,7 @@ let changeDateTime =(event)=>{
             type="submit"
             variant="contained"
             color="primary"
-            sx={{ marginBottom: 10 }}
+            sx={{ marginBottom: 2,marginTop:5 }}
           >
             Submit
           </Button>

@@ -351,28 +351,32 @@
   ],
   "users": [
     {
-      "id": 1,
-      "pfname": "Sibananda",
-      "plname": "sarkar",
-      "padd": "howrah",
-      "pmail": "abc@gmail.com",
-      "pgen": "MALE",
-      "pno": "985624",
-      "docname": "ssdey",
-      "date": "10/23/65",
-      "time": "12:45"
+      "pfname": "Rupali ",
+      "plname": "Dey",
+      "prelt": "Mother",
+      "padd": "kolkata",
+      "pmail": "yy1@gmail.com",
+      "pgen": "female",
+      "page": "",
+      "pno": "98654236587",
+      "docname": "DR.Jagannath Bhattacharya",
+      "date": "27-12-2023",
+      "time": "17:08",
+      "id": 2
     },
     {
       "pfname": "Subham",
-      "plname": "Sid",
-      "padd": "Kolkata",
+      "plname": "Dey",
+      "prelt": "Brother",
+      "padd": "Howrah",
       "pmail": "yy1@gmail.com",
-      "pgen": "female",
-      "pno": "9874566011",
-      "docname": "A.Das",
-      "date": "23-12-2023",
-      "time": "01:16",
-      "id": 2
+      "pgen": "male",
+      "page": "25",
+      "pno": "6598745632",
+      "docname": "DR.Syantani Dutta",
+      "date": "26-12-2023",
+      "time": "20:10",
+      "id": 3
     }
   ]
 }

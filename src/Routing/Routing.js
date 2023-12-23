@@ -16,6 +16,7 @@ import DocAppoint from "../Componants/Pages/DocAppoint";
 import ProtectedRoute from "./ProtectedRoute";
 import PtnDetails from "../Componants/Pages/PtnDetails";
 import Profile from "../Componants/Auth/Profile";
+import EditDetails from "../Componants/Pages/EditDetails";
 
 const Routing = () => {
   return (
@@ -35,9 +36,11 @@ const Routing = () => {
         <Route element={<ProtectedRoute/>}>  
         <Route path='admission' element={<AdmissionForm/>}/>
         <Route path='/doctor-appo/:appoid' element={<DocAppoint/>}/>
+       
+        </Route> 
         <Route path='ptndetails' element={<PtnDetails/>}/>
-        
-        </Route>  
+        <Route path='ptndetails/editdetail/:eid' element={<EditDetails/>}/>
+
         <Route path="login" element={<Login />}></Route>
         <Route path="signUp" element={<Reg />}></Route>
         <Route path="profile" element={<Profile/>}/>

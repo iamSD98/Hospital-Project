@@ -16,16 +16,32 @@ let [ptnDetail,setPtnDetail]=useState([]);
 let user_api="http://localhost:4000/users"
 
 
+let fetchPtn=()=>{
+  axios.get(user_api)
+  .then(res=>{
+      setPtnDetail(res.data)
+      console.log("user fetch",res.data);
+  })
+  .catch(err=>{
+      console.log("usrr not ffetch",err);
+  })
+}
+
     useEffect(()=>{
-        axios.get(user_api)
-        .then(res=>{
-            setPtnDetail(res.data)
-            console.log("user fetch",res.data);
-        })
-        .catch(err=>{
-            console.log("usrr not ffetch",err);
-        })
+      fetchPtn();  
     },[])
+
+
+    let deleteAppo=((id)=>{
+      axios.delete(`${user_api}/${id}`)
+      .then(res=>{
+        alert("data deleted")
+        fetchPtn();
+      })
+      .catch(err=>{
+        alert("deletion failed")
+      })
+    })
 
 
 
@@ -36,7 +52,13 @@ let user_api="http://localhost:4000/users"
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Patient Name</TableCell>
+            
+            <TableCell align="left">Appo No.</TableCell>
+            <TableCell align="left">First Name</TableCell>
+            <TableCell align="left">Last Name</TableCell>
+            <TableCell align="left">Relation</TableCell>
+            <TableCell align="center">Gender</TableCell>
+            <TableCell align="center">Age</TableCell>
             <TableCell align="center">Address</TableCell>
             <TableCell align="center">Doctor Name</TableCell>
             <TableCell align="center">Date</TableCell>
@@ -51,22 +73,25 @@ let user_api="http://localhost:4000/users"
               key={post.id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
-                {post.ptname}
-              </TableCell>
-              <TableCell align="center"> {post.padd}</TableCell>
-              <TableCell align="center"> {post.docname}</TableCell>
-              <TableCell align="center"> {post.date}</TableCell>
-              <TableCell align="center" > {post.time}</TableCell>
+              <TableCell align="left">{post.id}</TableCell>
+            <TableCell align="left">{post.pfname}</TableCell>
+            <TableCell align="left">{post.plname}</TableCell>
+            <TableCell align="left">{post.prelt}</TableCell>
+            <TableCell align="center">{post.pgen}</TableCell>
+            <TableCell align="center">{post.page}</TableCell>
+            <TableCell align="center">{post.padd}</TableCell>
+            <TableCell align="center">{post.docname}</TableCell>
+            <TableCell align="center">{post.date}</TableCell>
+            <TableCell align="center">{post.time}</TableCell>
+              
               <TableCell align="right">
-                <Link>
+                <Link to={`editdetail/${post.id}`}>
                 <Button>Update</Button>
                 </Link>
-              </TableCell>
-              <TableCell align="right">
-                <Button>Delete</Button>
-                
-              </TableCell>
+                </TableCell> 
+                <TableCell align="right"> 
+                <Button onClick={()=>deleteAppo(post.id)}>Delete</Button>
+                </TableCell>
             </TableRow>
           ))}
         </TableBody>

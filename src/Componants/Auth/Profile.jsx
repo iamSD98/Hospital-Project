@@ -103,7 +103,7 @@ const Profile = () => {
       <Container maxWidth="x1">
         <Box>
           <Grid container spacing={2}>
-            <Grid item md={4}>
+            <Grid item md={3}>
               <Box id="p-bg">
                 <Box className="profile-pic">
                   <Box id="pic">
@@ -148,12 +148,12 @@ const Profile = () => {
                 </Box>
               </Box>
             </Grid>
-            <Grid item md={8}>
+            <Grid item md={9}>
             <h1 style={{textAlign:'center',fontFamily:'kanit'}}>My Appointments</h1>
-              <Grid container spacing={6}>
+              <Grid container >
               
-                {ptnDetail.map((post) => (
-                  <Grid items md={6} key={post.id}>
+                {/* {ptnDetail.map((post) => (
+                  <Grid items md={12} key={post.id}>
                     <Box id='card'>
                     <p>Doctor Name: {post.docname}</p>
                     <p>Address: {post.padd}</p>
@@ -166,11 +166,12 @@ const Profile = () => {
                     <span><Button variant="contained" sx={{backgroundColor:'red',marginLeft:'2%'}} >Delete</Button></span>
                     </Box>                 
                   </Grid>
-                ))}
+                ))} */}
+                <PtnDetails/>
               </Grid>
             </Grid>
           </Grid>
-          <PtnDetails/>
+          {/* <PtnDetails/> */}
         </Box>
       </Container>
       

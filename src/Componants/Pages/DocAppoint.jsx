@@ -44,8 +44,11 @@ const DocAppoint = () => {
  let user_api="http://localhost:4000/users"
 
   let [ptnDetail, setPtnDetail] = useState({
-    pfname:user_Firstname,
-    plname:user_Lastname,
+    // pfname:user_Firstname,
+    // plname:user_Lastname,
+    pfname:"",
+    plname:"",
+    prelt:"",
     padd: "",
     pmail: user_email,
     pgen:"",
@@ -85,6 +88,7 @@ let changeDateTime =(event)=>{
     let userdata={
       pfname: ptnDetail.pfname,
       plname:ptnDetail.plname,
+      prelt:ptnDetail.prelt,
       padd:ptnDetail.padd ,
       pmail:ptnDetail.pmail,
       pgen:ptnDetail.pgen,
@@ -130,7 +134,7 @@ let changeDateTime =(event)=>{
                 variant="outlined"
                 fullWidth
                 name="pfname"
-                value={user_Firstname}
+                // value={user_Firstname}
                 onChange={changehandle}
               />
             </Grid>
@@ -140,7 +144,16 @@ let changeDateTime =(event)=>{
                 variant="outlined"
                 fullWidth
                 name="plname"
-                value={user_Lastname}
+                // value={user_Lastname}
+                onChange={changehandle}
+              />
+            </Grid>
+            <Grid item md={6}>
+              <TextField
+                label="Relation"
+                variant="outlined"
+                fullWidth
+                name="prelt"
                 onChange={changehandle}
               />
             </Grid>
@@ -152,7 +165,7 @@ let changeDateTime =(event)=>{
                 name="padd"
                 onChange={changehandle}
               />
-            </Grid>
+              </Grid>
             <Grid item md={6}>
               <TextField
                 label="Email"
@@ -177,6 +190,16 @@ let changeDateTime =(event)=>{
        
       </RadioGroup>
     </FormControl>
+            </Grid>
+            <Grid item md={6}>
+              <TextField
+                label="Age "
+                type="num"
+                variant="outlined"
+                fullWidth
+                name="page"
+                onChange={changehandle}
+              />
             </Grid>
             <Grid item md={6}>
               <TextField

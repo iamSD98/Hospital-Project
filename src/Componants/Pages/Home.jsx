@@ -6,7 +6,20 @@ import axios from "axios";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+
 import { Link } from "react-router-dom";
+
+function srcset(image, size, rows = 1, cols = 1) {
+  return {
+    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
+    srcSet: `${image}?w=${size * cols}&h=${
+      size * rows
+    }&fit=crop&auto=format&dpr=2 2x`,
+    
+  }
+}
 
 const Home = () => {
   let banner_url = " http://localhost:4000/image";
@@ -23,6 +36,10 @@ const Home = () => {
         // console.log("banner dont fetch", err);
       });
   }, [banner_url]);
+
+
+
+  
   return (
     <>
       {/*---------------------------------------------------------------Banner----------------------------------------------------------------------*/}
@@ -178,8 +195,9 @@ const Home = () => {
                   <Card sx={{ maxWidth: 345 }} id="dep_img">
                     <CardMedia
                       sx={{ height: 140 }}
-                      image="Assets/img/Dental.png"
-                      title="Dental Care"
+                      image="https://img.freepik.com/free-photo/close-up-man-rubbing-his-painful-back-isolated-white-background_1150-2934.jpg?w=1480&t=st=1702754958~exp=1702755558~hmac=f33a32e1be86bff57be57bff95a95864af8ac6f6d9bfc3084bdf54b31d21e861"
+                      
+                      title="Orthopaedic"
                     />
                     <CardContent>
                       <Typography
@@ -188,7 +206,7 @@ const Home = () => {
                         component="div"
                         fontFamily="Kanit, sans-serif"
                       >
-                        Dental Care
+                        Orthopaedic 
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
                         About Department
@@ -201,7 +219,7 @@ const Home = () => {
                   <Card sx={{ maxWidth: 345 }} id="dep_img">
                     <CardMedia
                       sx={{ height: 140 }}
-                      image="Assets/img/Eye.png"
+                      image="assets/img/genarel_p.jpg"
                       title="Eye Care"
                     />
                     <CardContent>
@@ -211,7 +229,7 @@ const Home = () => {
                         component="div"
                         fontFamily="Kanit, sans-serif"
                       >
-                        Eye Care
+                        General Physican
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
                         About Department
@@ -224,7 +242,7 @@ const Home = () => {
                   <Card sx={{ maxWidth: 345 }} id="dep_img">
                     <CardMedia
                       sx={{ height: 140 }}
-                      image="Assets/img/Skin.png"
+                      image="https://www.vadamalayan.org/wp-content/uploads/2023/02/cardio-img.jpg"
                       title="Skin Care"
                     />
                     <CardContent>
@@ -234,7 +252,7 @@ const Home = () => {
                         component="div"
                         fontFamily="Kanit, sans-serif"
                       >
-                        Skin Care
+                        Cardiologist
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
                         About Department
@@ -246,7 +264,7 @@ const Home = () => {
                   <Card sx={{ maxWidth: 345 }} id="dep_img">
                     <CardMedia
                       sx={{ height: 140 }}
-                      image="Assets/img/surgery.png"
+                      image="https://7dmc.ae/wp-content/uploads/2020/08/banner-Gynecology-Clinic2.jpg"
                       title=" Surgery"
                     />
                     <CardContent>
@@ -256,7 +274,95 @@ const Home = () => {
                         component="div"
                         fontFamily="Kanit, sans-serif"
                       >
-                        Surgery
+                        Gynaecologist
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        About Department
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+                <Grid item xs={6} md={3}>
+                  <Card sx={{ maxWidth: 345 }} id="dep_img">
+                    <CardMedia
+                      sx={{ height: 140 }}
+                      image="https://ssimsb.ac.in/public//uploads/course/1655210928.jpg"
+                      title="Dental Care"
+                    />
+                    <CardContent>
+                      <Typography
+                        gutterBottom
+                        variant="h5"
+                        component="div"
+                        fontFamily="Kanit, sans-serif"
+                      >
+                       Paediatrics 
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        About Department
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+                <Grid item xs={6} md={3}>
+                  <Card sx={{ maxWidth: 345 }} id="dep_img">
+                    <CardMedia
+                      sx={{ height: 140 }}
+                      image="https://sanjayhospital.in/images/bg/surgical-department.jpg"
+                      title="Dental Care"
+                    />
+                    <CardContent>
+                      <Typography
+                        gutterBottom
+                        variant="h5"
+                        component="div"
+                        fontFamily="Kanit, sans-serif"
+                      >
+                        Surgeon
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        About Department
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+                <Grid item xs={6} md={3}>
+                  <Card sx={{ maxWidth: 345 }} id="dep_img">
+                    <CardMedia
+                      sx={{ height: 140 }}
+                      image="https://videohive.img.customer.envatousercontent.com/files/52bfb920-5b9d-42c8-a377-c9f39b302d54/inline_image_preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=23706a6e13e688141541292e541dde18"
+                      title="Dental Care"
+                    />
+                    <CardContent>
+                      <Typography
+                        gutterBottom
+                        variant="h5"
+                        component="div"
+                        fontFamily="Kanit, sans-serif"
+                      >
+                        Neurologist
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        About Department
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+                <Grid item xs={6} md={3}>
+                  <Card sx={{ maxWidth: 345 }} id="dep_img">
+                    <CardMedia
+                      sx={{ height: 140 }}
+                      image="https://www.dentiquecochin.com/blog/wp-content/uploads/2019/07/dental-implant-treatment-in-kochi.jpg"
+                      title="Dental Care"
+                    />
+                    <CardContent>
+                      <Typography
+                        gutterBottom
+                        variant="h5"
+                        component="div"
+                        fontFamily="Kanit, sans-serif"
+                      >
+                        Dentist
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
                         About Department
@@ -347,6 +453,40 @@ const Home = () => {
               </Grid>
             </Container>
           </Box> */}
+{/* //---------------------------------------------galary-------------------------------------------------------------------------// */}
+
+          <Box id="galary">
+            <Container>
+            <h2
+                style={{
+                  textAlign: "center",
+                  marginBottom: "5%",
+                  fontFamily: "Kanit",
+                }}
+              >
+                Gallery
+              </h2>
+            <ImageList
+      sx={{ width:"100%", height: 550 }}
+      variant="quilted"
+      cols={4}
+      rowHeight={134}
+    >
+      {itemData.map((item) => (
+        <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
+          <img
+            {...srcset(item.img, item.rows, item.cols)}
+            style={{objectFit:"cover",height:"100%",width:"100%"}}
+            alt={item.title}
+            loading="lazy"
+          />
+        </ImageListItem>
+      ))}
+    </ImageList>
+ 
+            </Container>
+          </Box>
+
         </Box>
       </Container>
     </>
@@ -354,3 +494,49 @@ const Home = () => {
 };
 
 export default Home;
+const itemData = [
+  {
+    img: 'https://www.wisemedical.com.au/wp-content/uploads/2023/06/Radiology3-1.jpg',
+    title: 'Breakfast',
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: 'https://www.diabecare.org/images/pft-test.jpg',
+    title: 'Burger',
+  },
+  {
+    img: 'assets/img/genarel_p.jpg',
+    title: 'Camera',
+  },
+  {
+    img: 'https://www.southcoasthealth.com/assets/upload/3e71869e-831f-444f-a138-c978f32e2c6a/nephrologist-listens-to-the-kidneys-on-medical-background-3d-illustration.jpg',
+    title: 'Coffee',
+    cols: 2,
+  },
+  {
+    img: 'https://www.vadamalayan.org/wp-content/uploads/2023/02/cardio-img.jpg',
+    title: 'Hats',
+    cols: 2,
+  },
+  {
+    img: 'https://ssimsb.ac.in/public//uploads/course/1655210928.jpg',
+    title: 'Honey',
+    author: '@arwinneil',
+    rows: 2,
+    cols: 2,
+    
+  },
+  {
+    img: 'https://7dmc.ae/wp-content/uploads/2020/08/banner-Gynecology-Clinic2.jpg',
+    title: 'Basketball',
+    
+  },
+  {
+    img: 'https://www.dentiquecochin.com/blog/wp-content/uploads/2019/07/dental-implant-treatment-in-kochi.jpg',
+    title: 'Fern',
+  
+  },
+  
+ 
+];

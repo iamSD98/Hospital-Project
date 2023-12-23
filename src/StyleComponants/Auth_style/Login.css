@@ -6,7 +6,7 @@
 
 #login h2{font-family: 'Kanit', sans-serif;font-weight: 800;}
 
-#login-page{background-color: white;width: 100%;height: 83vh;box-shadow: 0px 10px 25px 20px grey;
+#login-page{background-color: white;width: 100%;box-shadow: 0px 10px 25px 20px grey;
     border-radius: 20px;margin-bottom: 10%;}
 
 #login{width: 60%;padding-left: 20%;margin-top: 20%;font-family: 'Kanit', sans-serif;font-weight: 800;}

@@ -333,7 +333,7 @@ const Reg = () => {
 
           {/* ----------------------------------------------------------small screen---------------------------------------------------------*/}
 
-          <Box id="signup-page" sx={{ display: { xs: "flex", md: "none" } }}>
+          <Box id="s-signup-page" sx={{ display: { xs: "flex", md: "none" } }}>
             <Grid container>
               <Grid item xs={12}>
                 <Box id="s-signup">

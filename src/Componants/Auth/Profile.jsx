@@ -26,7 +26,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
-
+import PtnDetails from "../Pages/PtnDetails";
 const Profile = () => {
   // let Profile_api="https://wtsacademy.dedicateddevelopers.us/api/user/profile-details";
 
@@ -170,8 +170,10 @@ const Profile = () => {
               </Grid>
             </Grid>
           </Grid>
+          <PtnDetails/>
         </Box>
       </Container>
+      
     </>
   );
 }

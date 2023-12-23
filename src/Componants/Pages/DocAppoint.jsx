@@ -17,7 +17,7 @@ const DocAppoint = () => {
   // console.log(valid_email);
 
   let { did,appoid } = useParams();
-  console.log("doctor id",appoid);
+  console.log("doctor id",appoid,did);
   let navigate=useNavigate("/")
   
   let depart_url = " http://localhost:4000/doctors";
@@ -51,7 +51,7 @@ const DocAppoint = () => {
     pgen:"",
     page:"",
     pno: "",
-    docname: "",
+    docname: appoid,
     date: "",
     time: "",
   });
@@ -193,9 +193,9 @@ let changeDateTime =(event)=>{
                 label="Doctor Name"
                 variant="outlined"
                 fullWidth
-                
+                value={appoid}
                 name="docname"
-                onChange={changehandle}
+                readOnly
               />
             </Grid>
             <Grid item md={6}>

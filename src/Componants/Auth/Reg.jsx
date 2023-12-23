@@ -6,12 +6,15 @@ import {
   TextField,
   Stack,
   InputAdornment,
+  IconButton,
   FormControl,
   FormLabel,
   Input,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import CameraAltRoundedIcon from "@mui/icons-material/CameraAltRounded";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import Avatar from "@mui/material/Avatar";
 import Checkbox from "@mui/material/Checkbox";
 import "../../StyleComponants/Auth_style/SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -132,7 +135,6 @@ const Reg = () => {
     registarData.append("email",Inputstate.email);
     registarData.append("password",Inputstate.password);
     registarData.append("profile_pic",imgState);
-    
     dispatch(sign_Up(registarData))
       .then(res=>{
         console.log("Response from API", res);
@@ -146,6 +148,22 @@ const Reg = () => {
         console.log("Reg failed",err);
       });
   };
+
+  //for upload profie pic
+
+  const fileInputRef = useRef(null);
+
+  // const handleFileSelect = () => {
+  //   fileInputRef.current.click();
+    
+  // };
+
+  const handleFileUpload = (e) => {
+    setImgstate(e.target.files[0]);
+    // console.log("Selected File:", setImgstate);
+  };
+
+
   return (
     <>
       <Box id="bg">
@@ -159,6 +177,17 @@ const Reg = () => {
                 <Box id="signup">
                   <Grid align="center">
                     <h2>Sign Up</h2>
+                    <Box sx={{position:'relative'}}>
+                    
+                   
+                  
+                    
+                   
+                   
+            
+                    </Box>
+                   
+
                   </Grid>
                   <form onSubmit={submitHandle} id="r-f1">
                   {user && <Stack style={{ color: 'red',paddingBottom:5 }}>{user}</Stack>}
@@ -295,9 +324,26 @@ const Reg = () => {
                         {Inputstate.errors.password}
                       </Stack>
                     ) : null}
+                  <TextField                      
+                    ref={fileInputRef}
+                      type="file"
+                      // style={{ display: "none" }}
+                      onChange={handleFileUpload}
+                  />
+                   
+                   
+                   {/* <IconButton
+                    onClick={handleFileSelect}
+                    
+                    sx={{position:'absolute',top:2,left:'38%',width:80,height:80}}
 
+                  >
+                    
+                    <CameraAltRoundedIcon sx={{fontSize:'32px',marginTop:5,marginLeft:'3px'}}/>
+                  </IconButton> */}
                     <Button
                       type="submit"
+                     
                       variant="contained"
                       color="primary"
                       disabled={
@@ -309,11 +355,6 @@ const Reg = () => {
                     >
                       Sign Up
                     </Button>
-                    <label htmlFor="">Profile Pic</label>
-                    <Input accept="image/*" id="profile-pic" type="file"
-                    
-                    onChange={(event)=>setImgstate(event.target.files[0])}
-                    />
                     
                   </form>
                   <h4 id="link-text">

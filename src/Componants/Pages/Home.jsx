@@ -268,6 +268,9 @@ const Home = () => {
             </Box>
           </Container>
 
+          
+
+
           {/*---------------------------------------------------------------Medical Camp----------------------------------------------------------------------*/}
           {/* <Box id="medical_camp">
             <Container>
@@ -326,7 +329,7 @@ const Home = () => {
             </Container>
           </Box>
           {/*---------------------------------------------------------------Specalist----------------------------------------------------------------------*/}
-          <Box id="specalist">
+          {/* <Box id="specalist">
             <Container>
               <h2
                 style={{
@@ -343,7 +346,7 @@ const Home = () => {
                 <Grid item xs={12} md={6}></Grid>
               </Grid>
             </Container>
-          </Box>
+          </Box> */}
         </Box>
       </Container>
     </>

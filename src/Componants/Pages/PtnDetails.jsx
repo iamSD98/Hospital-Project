@@ -7,11 +7,13 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Link } from 'react-router-dom';
-import { Button } from '@mui/material';
+import { Link, useParams } from 'react-router-dom';
+import { Box, Button } from '@mui/material';
+import EditDetails from './EditDetails';
 
 const PtnDetails = () => {
 
+let params=useParams()
 let [ptnDetail,setPtnDetail]=useState([]);
 let user_api="http://localhost:4000/users"
 
@@ -43,28 +45,47 @@ let fetchPtn=()=>{
       })
     })
 
+    // const editHandle = ((id) =>{
+    //   axios.post(`${user_api}/${id}`)
+    //   .then(res=>{
+        
+    //     console.log(res);
+    //   })
+    //   .catch(err=>{
+        
+    //   })
+    //   if (true) {
+    //     document.getElementById('edit').style.display='block'
+       
+    //   }
+    //   else{
+    //     document.getElementById('edit').style.display='none'
+    //   }
+    // })
 
 
   return (
     <div>
-        <h1>PtnDetails</h1>
-        <TableContainer component={Paper}>
+         <h1 style={{textAlign:'center',fontFamily:'kanit'}}>Appointments</h1>
+         <Box sx={{marginBottom:24}}>
+         <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
+        <TableHead sx={{boxShadow:'0px 3px 12px black',borderTop:'2px groove black',
+        borderRight:'2px groove black',borderLeft:'2px groove black'}}>
+          <TableRow> 
             
-            <TableCell align="left">Appo No.</TableCell>
-            <TableCell align="left">First Name</TableCell>
-            <TableCell align="left">Last Name</TableCell>
-            <TableCell align="left">Relation</TableCell>
-            <TableCell align="center">Gender</TableCell>
-            <TableCell align="center">Age</TableCell>
-            <TableCell align="center">Address</TableCell>
-            <TableCell align="center">Doctor Name</TableCell>
-            <TableCell align="center">Date</TableCell>
-            <TableCell align="center">Time</TableCell>
-            <TableCell align="right">Update</TableCell>
-            <TableCell align="right">Delete</TableCell>
+            <TableCell align="left" sx={{fontSize:'15px',fontWeight:600}}>Appo No.</TableCell>
+            <TableCell align="left" sx={{fontSize:'15px',fontWeight:600}}>First Name</TableCell>
+            <TableCell align="left" sx={{fontSize:'15px',fontWeight:600}}>Last Name</TableCell>
+            <TableCell align="left" sx={{fontSize:'15px',fontWeight:600}}>Relation</TableCell>
+            <TableCell align="center" sx={{fontSize:'15px',fontWeight:600}}>Gender</TableCell>
+            <TableCell align="center" sx={{fontSize:'15px',fontWeight:600}}>Age</TableCell>
+            <TableCell align="center" sx={{fontSize:'15px',fontWeight:600}}>Address</TableCell>
+            <TableCell align="center" sx={{fontSize:'15px',fontWeight:600}}>Doctor Name</TableCell>
+            <TableCell align="center" sx={{fontSize:'15px',fontWeight:600}}>Date</TableCell>
+            <TableCell align="center" sx={{fontSize:'15px',fontWeight:600}}>Time</TableCell>
+            <TableCell align="right" sx={{fontSize:'15px',fontWeight:600}}>Update</TableCell>
+            <TableCell align="right" sx={{fontSize:'15px',fontWeight:600}}>Delete</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -85,9 +106,10 @@ let fetchPtn=()=>{
             <TableCell align="center">{post.time}</TableCell>
               
               <TableCell align="right">
-                <Link to={`editdetail/${post.id}`}>
-                <Button>Update</Button>
-                </Link>
+                <Link to={`/ptndetails/editdetail/${post.id}`}> <Button >Update</Button> </Link>
+                
+              
+                
                 </TableCell> 
                 <TableCell align="right"> 
                 <Button onClick={()=>deleteAppo(post.id)}>Delete</Button>
@@ -97,7 +119,11 @@ let fetchPtn=()=>{
         </TableBody>
       </Table>
     </TableContainer>
+         </Box>
+       
 
+   
+       
 
     </div>
   )

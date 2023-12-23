@@ -36,14 +36,14 @@ const Routing = () => {
         <Route element={<ProtectedRoute/>}>  
         <Route path='admission' element={<AdmissionForm/>}/>
         <Route path='/doctor-appo/:appoid' element={<DocAppoint/>}/>
-       
+        <Route path="profile" element={<Profile/>}/>
         </Route> 
         <Route path='ptndetails' element={<PtnDetails/>}/>
-        <Route path='ptndetails/editdetail/:eid' element={<EditDetails/>}/>
+        <Route path='ptndetails/editdetail/:id' element={<EditDetails/>}/>
 
         <Route path="login" element={<Login />}></Route>
         <Route path="signUp" element={<Reg />}></Route>
-        <Route path="profile" element={<Profile/>}/>
+      
       </Routes>
       <Footer/>
     </>

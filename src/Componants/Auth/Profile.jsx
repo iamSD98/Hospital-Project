@@ -27,6 +27,7 @@ import Paper from "@mui/material/Paper";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import PtnDetails from "../Pages/PtnDetails";
+import EditDetails from "../Pages/EditDetails";
 const Profile = () => {
   // let Profile_api="https://wtsacademy.dedicateddevelopers.us/api/user/profile-details";
 
@@ -102,8 +103,8 @@ const Profile = () => {
     <>
       <Container maxWidth="x1">
         <Box>
-          <Grid container spacing={2}>
-            <Grid item md={3}>
+          <Grid container>
+            <Grid item md={12} xs={12}>
               <Box id="p-bg">
                 <Box className="profile-pic">
                   <Box id="pic">
@@ -113,7 +114,7 @@ const Profile = () => {
                       id="profile-img"
                     />
                   </Box>
-                  <Box>
+                  {/* <Box>
                     <input
                       ref={fileInputRef}
                       type="file"
@@ -126,7 +127,7 @@ const Profile = () => {
                     >
                       <CameraAltRoundedIcon />
                     </IconButton>
-                  </Box>
+                  </Box> */}
                 </Box>
                 <Box>
                   <Typography
@@ -148,8 +149,8 @@ const Profile = () => {
                 </Box>
               </Box>
             </Grid>
-            <Grid item md={9}>
-            <h1 style={{textAlign:'center',fontFamily:'kanit'}}>My Appointments</h1>
+            <Grid item md={9} xs={12}>
+           
               <Grid container >
               
                 {/* {ptnDetail.map((post) => (
@@ -167,11 +168,12 @@ const Profile = () => {
                     </Box>                 
                   </Grid>
                 ))} */}
-                <PtnDetails/>
+                {/* <PtnDetails/> */}
               </Grid>
             </Grid>
           </Grid>
-          {/* <PtnDetails/> */}
+          <PtnDetails/>
+         
         </Box>
       </Container>
       

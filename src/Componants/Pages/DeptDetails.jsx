@@ -95,7 +95,7 @@ const DeptDetails = () => {
                           </Typography>
                         </CardContent>
                         <Box id="bd-p1">
-                          <Link to={`doctordetails-page/${doc.docid}`}>
+                          <Link to={`doctordetails/${doc.docid}`}>
                             <Button id="d-dbtn">Details</Button>
                           </Link>
                         </Box>

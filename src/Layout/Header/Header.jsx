@@ -1,18 +1,4 @@
-import {
-  AppBar,
-  Container,
-  Toolbar,
-  Typography,
-  Box,
-  Button,
-  Tab,
-  MenuItem,
-  Menu,
-  Stack,
-  FormControl,
-  Select,
-  InputLabel,
-} from "@mui/material";
+import {AppBar,Container,Toolbar,Typography,Box,Button,Tab,Stack} from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
@@ -24,12 +10,10 @@ import Paper from "@mui/material/Paper";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import Grow from "@mui/material/Grow";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import "../../StyleComponants/Layout_style/Header.css";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Drawer from "@mui/material/Drawer";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { styled, useTheme } from "@mui/material/styles";
+import "../../StyleComponants/Layout_style/Header.css";
 
 const Header = () => {
   let pro_img = window.sessionStorage.getItem("pro_image");
@@ -38,6 +22,10 @@ const Header = () => {
   console.log("profile:", profile_name);
   // console.log("token",token_value);
   const navigate = useNavigate();
+  let location = useLocation();
+    console.log(location);
+
+
   const [color, setColor] = useState(false);
 
   const changecolor = () => {
@@ -101,24 +89,24 @@ const Header = () => {
           </Typography>
           {/* For lg/md screen */}
           <Box sx={{ flexGrow: 2, display: { md: "flex", xs: "none" } }}>
-            <Link to="/">
+            <Link to="/" className={`${location.pathname ==='/'? "active":'not'}`}>
               <Tab label="Home" id="tab" />
             </Link>
-            <Link to="emergency-dept-page">
+            <Link to="emergency-dept" className={`${location.pathname ==='/emergency-dept'? "active" : "not"}`}>
               <Tab label="Emergency" id="tab" />
             </Link>
-            <Link to="admission">
+            {/* <Link to="admission" className={`${location.pathname ==='/emergency-dept-page'? "active" : "not"}`}>
               <Tab label="Admission" id="tab" />
-            </Link>
+            </Link> */}
 
-            <Link to="department-page">
+            <Link to="department" className={`${location.pathname ==='/department'? "active" : "not"}`}>
               <Tab label="Department" id="tab" />
             </Link>
 
-            <Link to="/">
+            <Link to="#footer" className={`${location.pathname ==='/contact'? "active" : "not"}`}>
               <Tab label="Contact" id="tab" />
             </Link>
-            <Link to="ptndetails">
+            <Link to="ptndetails" className={`${location.pathname ==='/ptndetails'? "active" : "not"}`}>
               <AssignmentTurnedInIcon id="icon-tab" />
             </Link>
           </Box>
@@ -279,8 +267,10 @@ const Header = () => {
             </Box>
           )}
         </Drawer>
+
       </Container>
     </AppBar>
+   
   );
 };
 

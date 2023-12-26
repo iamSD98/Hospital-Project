@@ -99,7 +99,7 @@ const Department = () => {
                       </Typography>
                     </CardContent>
                     <Box id="b-p">
-                      <Link to={`deptdetails-page/${post.id}`}>
+                      <Link to={`deptdetails/${post.id}`}>
                         <Button id="btn1">Details</Button>
                       </Link>
                       </Box>
@@ -142,7 +142,7 @@ const Department = () => {
                     </CardContent>
                    
                       <Box id="b-p1">
-                      <Link to={`deptdetails-page/${post.id}`}>
+                      <Link to={`deptdetails/${post.id}`}>
                         <Button id="btn1">Details</Button>
                       </Link>
                       </Box>

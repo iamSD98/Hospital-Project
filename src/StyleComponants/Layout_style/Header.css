@@ -2,13 +2,15 @@
 
 #appbar1{background-color:white;box-shadow: gray;}
 
-#tab{color: black;font-weight: 600;font-family: 'Kanit', sans-serif;font-size: 17px;}
+#tab{font-weight: 600;font-family: 'Kanit', sans-serif;font-size: 17px;}
 
-#tab:hover{color: rgb(25, 178, 239);font-weight: 800;}
+#tab:hover{color: rgb(25, 178, 239);font-weight: 800;} 
 
 #tab::after{content: "";width: 0%; height: 2px;background:black;display: block;transition: 0.5s;margin-left: 0px;}
 
 #tab:hover::after{width: 100%;}
+
+#icon-tab{font-size: 27px;margin-top: 30%;}
 
 #btn1{background-color: rgb(25, 178, 239);color: white;border: 2px solid skyblue;margin: 6px;font-family: 'Kanit', sans-serif;}
 
@@ -30,3 +32,9 @@
     text-align: center;
 }    
 #ava{margin-left: 40%;margin-top: 10%;transform: scale(2);}
+
+a.active{color: rgb(25, 178, 239)}
+
+a.not{color: black;}
+
+

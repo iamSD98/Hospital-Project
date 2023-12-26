@@ -8,7 +8,7 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import '../../StyleComponants/Pages_style/DocAppoint.css'
 import axios from "axios";
-import { LocalLaundryService } from "@mui/icons-material";
+
 
 const DocAppoint = () => {
   let user_email = window.sessionStorage.getItem("email");

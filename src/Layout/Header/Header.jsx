@@ -82,9 +82,9 @@ const Header = () => {
     <AppBar id={color ? "appbar1" : "appbar"}>
       <Container maxWidth="x1">
         <Toolbar>
-          <Typography sx={{ flexGrow: 5, display: { md: "flex", xs: "none" } }}>
+          <Typography sx={{ flexGrow: 3, display: { md: "flex", xs: "none" } }}>
             <Link to="/">
-              <img src="Assets/img/logo.png" alt="Logo" />
+              <img src="Assets/img/logo.png" alt="Logo" height={70} width={250}/>
             </Link>
           </Typography>
           {/* For lg/md screen */}
@@ -168,7 +168,7 @@ const Header = () => {
           {/* For xs screen */}
           <Typography sx={{ flexGrow: 2, display: { md: "none", xs: "flex" } }}>
             <Link to="/">
-              <img src="Assets/img/logo.png" alt="Logo" />
+              <img src="Assets/img/logo.png" alt="Logo" height={70} width={250}/>
             </Link>
           </Typography>
 

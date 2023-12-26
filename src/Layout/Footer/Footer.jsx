@@ -10,7 +10,7 @@ const Footer = () => {
           <Grid container spacing={3}>
             <Grid item md={4}>
               <Typography id='logo'>
-                <img src="Assets/img/logo.png" alt="logo" />
+                <img src="Assets/img/logo.png" alt="logo" height={90} width={350}/>
               </Typography>
             </Grid>
             <Grid item md={4}>

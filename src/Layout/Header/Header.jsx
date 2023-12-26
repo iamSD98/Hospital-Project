@@ -103,8 +103,8 @@ const Header = () => {
               <Tab label="Department" id="tab" />
             </Link>
 
-            <Link to="#footer" className={`${location.pathname ==='/contact'? "active" : "not"}`}>
-              <Tab label="Contact" id="tab" />
+            <Link to="academics" className={`${location.pathname ==='/contact'? "active" : "not"}`}>
+              <Tab label="Academics" id="tab" />
             </Link>
             <Link to="ptndetails" className={`${location.pathname ==='/ptndetails'? "active" : "not"}`}>
               <AssignmentTurnedInIcon id="icon-tab" />

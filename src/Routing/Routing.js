@@ -17,6 +17,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import PtnDetails from "../Componants/Pages/PtnDetails";
 import Profile from "../Componants/Auth/Profile";
 import EditDetails from "../Componants/Pages/EditDetails";
+import Academics from "../Componants/Pages/Academics";
 
 const Routing = () => {
   return (
@@ -30,7 +31,7 @@ const Routing = () => {
         <Route path='department/deptdetails/:id/doctordetails/:did' element={<DoctorDetails/>}/>
         
         <Route path='emergency-dept' element={<EmergencyDept/>}/>
-        <Route path='academics' element={<Career/>}/>
+        <Route path='academics' element={<Academics/>}/>
         
              
         <Route element={<ProtectedRoute/>}>  

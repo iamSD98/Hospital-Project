@@ -15,23 +15,47 @@ const PtnDetails = () => {
 
 let params=useParams()
 let [ptnDetail,setPtnDetail]=useState([]);
+let [admDetail,setAdmdetail]=useState([]);
+
 let user_api="http://localhost:4000/users"
+let admission_url="http://localhost:4000/admission";
 
 
 let fetchPtn=()=>{
   axios.get(user_api)
   .then(res=>{
       setPtnDetail(res.data)
-      console.log("user fetch",res.data);
+      
+      console.log("fetch appoint details",res.data);
   })
   .catch(err=>{
       console.log("usrr not ffetch",err);
   })
 }
 
-    useEffect(()=>{
-      fetchPtn();  
-    },[])
+
+
+let fetchAdmission=()=>{
+  axios.get(admission_url)
+  .then(res=>{
+      setAdmdetail(res.data)
+      
+      console.log("fetch admission details",res.data);
+  })
+  .catch(err=>{
+      console.log("usrr not ffetch",err);
+  })
+}
+useEffect(()=>{
+  fetchPtn(); 
+  fetchAdmission();
+   
+},[])
+    // useEffect(()=>{
+      
+    //   fetchAdmission(); 
+    // },[])
+   
 
 
     let deleteAppo=((id)=>{
@@ -66,7 +90,7 @@ let fetchPtn=()=>{
 
   return (
     <div>
-         <h1 style={{textAlign:'center',fontFamily:'kanit'}}>Appointments</h1>
+         <h1 style={{textAlign:'center',fontFamily:'kanit'}}>Users Appointments Details</h1>
          <Box sx={{marginBottom:24}}>
          <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -121,7 +145,48 @@ let fetchPtn=()=>{
     </TableContainer>
          </Box>
        
+         <h1 style={{textAlign:'center',fontFamily:'kanit'}}>Users Admission Details</h1>
 
+
+         <Box sx={{marginBottom:24}}>
+         <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableHead sx={{boxShadow:'0px 3px 12px black',borderTop:'2px groove black',
+        borderRight:'2px groove black',borderLeft:'2px groove black'}}>
+          <TableRow> 
+            
+            <TableCell align="left" sx={{fontSize:'15px',fontWeight:600}}>Add No.</TableCell>
+            <TableCell align="left" sx={{fontSize:'15px',fontWeight:600}}>Patient Name</TableCell>
+            <TableCell align="center" sx={{fontSize:'15px',fontWeight:600}}>Gurdain Name</TableCell>
+            <TableCell align="center" sx={{fontSize:'15px',fontWeight:600}}>Email</TableCell>
+            <TableCell align="center" sx={{fontSize:'15px',fontWeight:600}}>Phone No</TableCell>
+            <TableCell align="right" sx={{fontSize:'15px',fontWeight:600}}>Reason</TableCell>
+            <TableCell align="right" sx={{fontSize:'15px',fontWeight:600}}>Age</TableCell>
+            <TableCell align="right" sx={{fontSize:'15px',fontWeight:600}}>Address</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {admDetail.map((post) => (
+            <TableRow
+              key={post.id}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            >
+              <TableCell align="left">{post.id}</TableCell>
+            <TableCell align="left">{post.pname}</TableCell>
+            <TableCell align="center">{post.gname}</TableCell>
+            <TableCell align="center">{post.email}</TableCell>
+            <TableCell align="center">{post.pnum}</TableCell>
+            <TableCell align="right">{post.reason}</TableCell>
+            <TableCell align="right">{post.page}</TableCell>
+            <TableCell align="right">{post.add}</TableCell>
+              
+              
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+         </Box>
    
        
          

@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+
 import Header from "../Layout/Header/Header";
 import Footer from "../Layout/Footer/Footer";
 import Home from "../Componants/Pages/Home";
@@ -18,6 +19,8 @@ import PtnDetails from "../Componants/Pages/PtnDetails";
 import Profile from "../Componants/Auth/Profile";
 import EditDetails from "../Componants/Pages/EditDetails";
 import Academics from "../Componants/Pages/Academics";
+import AdmDetail from "../Componants/Pages/AdmDetail";
+// import Admission from "../Componants/Pages/Admission";
 
 const Routing = () => {
   return (
@@ -32,13 +35,15 @@ const Routing = () => {
         
         <Route path='emergency-dept' element={<EmergencyDept/>}/>
         <Route path='academics' element={<Academics/>}/>
-        
+        {/* <Route path='admission' element={<Admission/>}/> */}
+        <Route path='admdetail' element={<AdmDetail/>}/>
              
         <Route element={<ProtectedRoute/>}>  
         <Route path='admission' element={<AdmissionForm/>}/>
         <Route path='/doctor-appo/:appoid' element={<DocAppoint/>}/>
         <Route path="profile" element={<Profile/>}/>
         </Route> 
+
         <Route path='ptndetails' element={<PtnDetails/>}/>
         <Route path='ptndetails/editdetail/:id' element={<EditDetails/>}/>
 

@@ -365,42 +365,84 @@
       "id": 1
     }
   ],
-  "academic":[
+  "academic": [
     {
-      "course_name":"BSC nursing",
-      "Type_course":" Certificate course",
-      "Duration_Training":" 9 months",
-      "Eligibility":"Science Graduate",
-      "Total_seat":"25",
-      "Session_starts":" August every year",
-      "Course_Director_at_AMRI":"Dr.S.K.Todi, HOD- Academics & Research",
-      "Course_coordinator_at_AMRI":" Dr.Pinaki Datta, Academic Registrar",
+      "course_name": "BSC nursing",
+      "Type_course": " Certificate course",
+      "Duration_Training": " 9 months",
+      "Eligibility": "Science Graduate",
+      "Total_seat": "25",
+      "Session_starts": " August every year",
+      "Course_Director_at_AMRI": "Dr.S.K.Todi, HOD- Academics & Research",
+      "Course_coordinator_at_AMRI": " Dr.Pinaki Datta, Academic Registrar",
       "deptbanner": "https://media.istockphoto.com/id/520686505/photo/nursing-or-medical-student-walking-to-class-on-hospital-campus.jpg?s=612x612&w=0&k=20&c=CgzHQrwv2Qt_ARNCJaQ-kLPDEiNFt6ByhJDBCt-r9U0=",
-      "id":1
-   },
-   {
-    "course_name":"Hospital Management",
-    "Type_course":" Certificate course",
-    "Duration_Training":" 9 months",
-    "Eligibility":"Science Graduate",
-    "Total_seat":"25",
-    "Session_starts":" August every year",
-    "Course_Director_at_AMRI":"Dr.S.K.Todi, HOD- Academics & Research",
-    "Course_coordinator_at_AMRI":" Dr.Pinaki Datta, Academic Registrar",
-    "deptbanner": "https://www.sbihm.in/img/hospital/h4.jpg",
-    "id":2
+      "id": 1
     },
     {
-      "course_name":"Paramedical Cource",
-      "Type_course":" Certificate course",
-      "Duration_Training":" 9 months",
-      "Eligibility":"Science Graduate",
-      "Total_seat":"25",
-      "Session_starts":" August every year",
-      "Course_Director_at_AMRI":"Dr.S.K.Todi, HOD- Academics & Research",
-      "Course_coordinator_at_AMRI":" Dr.Pinaki Datta, Academic Registrar",
+      "course_name": "Hospital Management",
+      "Type_course": " Certificate course",
+      "Duration_Training": " 9 months",
+      "Eligibility": "Science Graduate",
+      "Total_seat": "25",
+      "Session_starts": " August every year",
+      "Course_Director_at_AMRI": "Dr.S.K.Todi, HOD- Academics & Research",
+      "Course_coordinator_at_AMRI": " Dr.Pinaki Datta, Academic Registrar",
+      "deptbanner": "https://www.sbihm.in/img/hospital/h4.jpg",
+      "id": 2
+    },
+    {
+      "course_name": "Paramedical Cource",
+      "Type_course": " Certificate course",
+      "Duration_Training": " 9 months",
+      "Eligibility": "Science Graduate",
+      "Total_seat": "25",
+      "Session_starts": " August every year",
+      "Course_Director_at_AMRI": "Dr.S.K.Todi, HOD- Academics & Research",
+      "Course_coordinator_at_AMRI": " Dr.Pinaki Datta, Academic Registrar",
       "deptbanner": "https://www.hull.ac.uk/editor-assets/images/health-nursing-and-midwifery/danny-cooper-and-sally-mckee-paramedic-science-fhs-25-07-18-119.xbfbb52fc.jpg?w=1620&h=1080&crop=1080,1080,270,0&w=730&h=730",
-      "id":3
-   }
+      "id": 3
+    }
+  ],
+  "admission": [
+    {
+      "pname": "",
+      "gname": "",
+      "email": "",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 1
+    },
+      {
+      "pname": "siddhartha dey",
+      "gname": "rupali dey",
+      "email": "yy1@gmail.com",
+      "pnum": "9865745412",
+      "reason": 20,
+      "page": "",
+      "add": "ramrajatala",
+      "id": 7
+    },
+    {
+      "pname": "siddhartha",
+      "gname": "rupali dey",
+      "email": "yy1@gmail.com",
+      "pnum": "9865321478",
+      "reason": 20,
+      "page": "54",
+      "add": "ramrajatala",
+      "id": 8
+    },
+    {
+      "pname": "siddhartha",
+      "gname": "rupali dey",
+      "email": "yy1@gmail.com",
+      "pnum": "9865745412",
+      "reason": 20,
+      "page": "25",
+      "add": "ramrajatala",
+      "id": 9
+    }
   ]
 }

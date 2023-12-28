@@ -83,19 +83,19 @@ fetchAcademic();
                 >
                   <h1>{post.course_name}</h1>
                   <br/>
-                  Type_course:{post.Type_course}
+                  <span style={{fontWeight:"600"}}>Type course:</span>{post.Type_course}
                   <br/>
-                  Duration_Training:{post.Duration_Training}
+                  <span style={{fontWeight:"600"}}> Duration Training :</span> {post.Duration_Training}
                   <br/>
-                  Eligibility:{post.Eligibility}
+                  <span style={{fontWeight:"600"}}>Eligibility:</span> {post.Eligibility}
                   <br/>
-                    Total_seat:{post.Total_seat}
+                  <span style={{fontWeight:"600"}}> Total seat:</span> {post.Total_seat}
                   <br/>
-                  Session_starts:{post.Session_starts}
+                  <span style={{fontWeight:"600"}}>Session starts:</span>{post.Session_starts}
                   <br/>
-                  Course_Director_at_AMRI:{post.Course_Director_at_AMRI}
+                  <span style={{fontWeight:"600"}}> Course Director at S&S:</span>{post.Course_Director_at_AMRI}
                   <br/>
-                  Course_coordinator_at_AMRI:{post.Course_coordinator_at_AMRI}
+                  <span style={{fontWeight:"600"}}>Course coordinator at S&S:</span>{post.Course_coordinator_at_AMRI}
 
                 </Typography>
                 

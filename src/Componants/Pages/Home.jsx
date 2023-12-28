@@ -111,9 +111,9 @@ const Home = () => {
                     </Button>
                     </Link> 
 
-                    <Link to="">
+                    <Link to="admission">
                       <Button id="abt-btn">
-                        Appointment
+                        Admission
                         <ArrowRightAltIcon style={{ color: "black" }} />
                       </Button>
                     </Link>

@@ -17,49 +17,77 @@ import { Description } from "@mui/icons-material";
 
 const AdmissionForm = () => {
 
+let user_email = window.sessionStorage.getItem("email");
   
-  const paperStyle = { padding: "30px 20px", width: 800, margin: "50px auto" };
-  let [dept, setDepart] = useState([
-    "Opration",
-    "Metarnity",
-    "Emargency",
-    "Outdoor",
-  ]);
-  const department = ["Opration", "Metarnity", "Emargency", "Outdoor"];
-
-  let [doctor, setDoctor] = useState([{doc:["Dr sujay kundu","Dr pritha mondal"],doc2: "Dr Bijay khan",doc3: "Dr pritha mondal",doc4: "Dr p sinha roy"}]);
-  const doctors = ["Dr sujay kundu", "Dr Bijay khan", "Dr pritha mondal", "Dr p sinha roy"];
+  
+ 
+  
 
   let [ptnData, setPtnData] = useState({
     pname: "",
     gname: "",
-    email: "",
+    email: user_email,
     pnum: "",
-    add: "",
     reason: "",
-    dname: "",
+    page:"",
+    add: "",
+    
   });
+
+  const [age, setAge] = useState("");
+
+  // const handleChange = (event) => {
+  //   setAge(event.target.value);
+  // };
+
 
   let changeHandle = (event) => {
     let { name, value } = event.target;
     setPtnData({ ...ptnData, [name]: value });
-
-    setDepart(event.target.value);
-     setDoctor(event.target.value);
+    setAge(event.target.value);
+   
   };
+
+  let admission_url="http://localhost:4000/admission";
+
   let submitHaldle = (event) => {
     event.preventDefault();
     console.log("the patient data is", ptnData);
+
+    let admission_data={
+    pname:ptnData.pname ,
+    gname: ptnData.gname,
+    email: ptnData.email,
+    pnum: ptnData.pnum,
+    reason: ptnData.reason,
+    page:ptnData.page,
+    add: ptnData.add,
+    }
+
+    axios.post(admission_url,admission_data)
+    .then(res=>{
+      console.log("patient admission data",res.data);
+      alert("patient appointed")
+      setPtnData(res.data)
+    })
+    .catch(err=>{
+      console.log("err",err);
+    })
+
   };
 
   return (
     <div>
       <Container>
-        <Paper elevation={20} style={paperStyle}>
-          <Grid xs={12} md={12} item>
-            <h2 align="center">Patient Admission Form</h2>
+        
+       <Box> 
+        <Grid container spacing={2}>
+          <Grid item md={6}>
+            <img src="Assets/img/admission_form.png" alt="" srcset="" width="100%"/>
           </Grid>
-
+          
+          <Grid item md={6}>
+          <h2 align="center">Patient Admission Form</h2>
           <form onSubmit={submitHaldle}>
             <Grid container spacing={1}>
               <Grid xs={12} sm={6} item>
@@ -80,12 +108,14 @@ const AdmissionForm = () => {
                   onChange={changeHandle}
                 />
               </Grid>
+
               <Grid xs={12} sm={6} item>
                 <TextField
                   label="Email"
                   variant="outlined"
                   fullWidth
                   name="email"
+                  value={user_email}
                   onChange={changeHandle}
                 />
               </Grid>
@@ -98,6 +128,32 @@ const AdmissionForm = () => {
                   onChange={changeHandle}
                 />
               </Grid>
+              <Grid xs={12} sm={6} item>
+              <InputLabel id="demo-simple-select-label">Reason</InputLabel>
+  <Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    value={age}
+    label="Age"
+    name="reason"
+    onChange={changeHandle}
+  >
+    <MenuItem value={10}>Operative</MenuItem>
+    <MenuItem value={20}>Emergency</MenuItem>
+    <MenuItem value={30}>Metarnity</MenuItem>
+    <MenuItem value={40}>Chronic Desease</MenuItem>
+  </Select>
+              </Grid>
+              <Grid xs={12} sm={6} item>
+                <TextField
+                  label="Age"
+                  variant="outlined"
+                  fullWidth
+                  name="page"
+                  onChange={changeHandle}
+                />
+              </Grid>
+              
               <Grid xs={12} item>
                 <TextField
                   label="Address"
@@ -108,40 +164,8 @@ const AdmissionForm = () => {
                 />
               </Grid>
 
-              <Grid xs={12} sm={6} item>
-                <Select
-                  label="select department"
-                  value={dept}
-                  select
-                  fullWidth
-                  name="reason"
-                  onChange={changeHandle}
-                  sx={{ width: "300px" }}
-                >
-                  {department.map((dept, index) => (
-                    <MenuItem value={index} key={dept}>
-                      {dept}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </Grid>
-              <Grid xs={12} sm={6} item>
-              <Select
-                  label="select department"
-                  value={doctor}
-                  select
-                  fullWidth
-                  name="reason"
-                  onChange={changeHandle}
-                  sx={{ width: "300px" }}
-                >
-                  {doctors.map((doc, index) => (
-                    <MenuItem value={index} key={doc}>
-                      {doc}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </Grid>
+              
+              
 
               <Grid item xs={12}>
                 <Button
@@ -155,7 +179,12 @@ const AdmissionForm = () => {
               </Grid>
             </Grid>
           </form>
-        </Paper>
+          </Grid>
+          
+        </Grid> 
+      </Box>
+          
+        
       </Container>
     </div>
   );

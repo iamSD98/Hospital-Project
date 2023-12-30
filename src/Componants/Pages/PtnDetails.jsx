@@ -9,11 +9,9 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Link, useParams } from 'react-router-dom';
 import { Box, Button } from '@mui/material';
-import EditDetails from './EditDetails';
 
 const PtnDetails = () => {
 
-let params=useParams()
 let [ptnDetail,setPtnDetail]=useState([]);
 let [admDetail,setAdmdetail]=useState([]);
 
@@ -26,7 +24,7 @@ let fetchPtn=()=>{
   .then(res=>{
       setPtnDetail(res.data)
       
-      console.log("fetch appoint details",res.data);
+      // console.log("fetch appoint details",res.data);
   })
   .catch(err=>{
       console.log("usrr not ffetch",err);
@@ -40,7 +38,7 @@ let fetchAdmission=()=>{
   .then(res=>{
       setAdmdetail(res.data)
       
-      console.log("fetch admission details",res.data);
+      // console.log("fetch admission details",res.data);
   })
   .catch(err=>{
       console.log("usrr not ffetch",err);

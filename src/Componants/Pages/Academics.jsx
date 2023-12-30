@@ -1,10 +1,7 @@
 import React from 'react'
-import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Container, Box, Grid, Typography,TextField,Button } from "@mui/material";
-
-import { Link } from "react-router-dom";
+import { Container, Box, Grid, Typography } from "@mui/material";
 
 const Academics = () => {
 
@@ -12,10 +9,25 @@ let [acadademic,setAcademic]=useState([])
 
 let academic_url="http://localhost:4000/academic"
 
+let banner_url = " http://localhost:4000/image";
+let [img, setImg] = useState([]);
+
+useEffect(() => {
+  axios
+    .get(banner_url)
+    .then((res) => {
+      // console.log("The banner ", res.data);
+      setImg(res.data);
+    })
+    .catch((err) => {
+      // console.log("banner dont fetch", err);
+    });
+}, [banner_url]);
+
 let fetchAcademic=()=>{
     axios.get(academic_url)
     .then(res=>{
-        console.log("fetch academic",res.data);
+        // console.log("fetch academic",res.data);
         setAcademic(res.data)
     })
     .catch(err=>{
@@ -32,8 +44,27 @@ fetchAcademic();
 
 
   return (
+
     <>
-        <h1>Academics</h1>
+    <Box id="dep-banner">
+        <Container>
+          <Box>
+            <Grid container>
+              <Grid item md={12} xs={12}>
+                <Typography style={{textShadow:'0px 5px 8px black'}} id="dep-intro">
+                  Academics
+                </Typography>
+              </Grid>
+            </Grid>
+          </Box>
+        </Container>
+        {img.map((post) => (
+          <React.Fragment key={post.id}>
+            <img src={post.banner.depatbanner} alt="" id="d-banner" />
+          </React.Fragment>
+        ))}
+      </Box>
+
         <Container>
             {
                 acadademic.map((post)=>(
@@ -45,6 +76,7 @@ fetchAcademic();
             marginBottom: 8,
             marginTop: 8,
             boxShadow: "0px 5px 10px black",
+            padding:'5%'
           }}
        key={post.id} >
           <Grid container spacing={2}>

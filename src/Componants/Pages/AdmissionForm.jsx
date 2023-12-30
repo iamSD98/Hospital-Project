@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Container,
   Grid,
   TextField,
   Button,
-  Paper,
-  Typography,
   Box,
+  FormControl,
 } from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
+import '../../StyleComponants/Pages_style/Admission.css'
 import Select from "@mui/material/Select";
 import axios from "axios";
-import { Description } from "@mui/icons-material";
+
 
 const AdmissionForm = () => {
 
@@ -80,15 +79,18 @@ let user_email = window.sessionStorage.getItem("email");
     <div>
       <Container>
         
-       <Box> 
+       <Box id='adm'> 
         <Grid container spacing={2}>
           <Grid item md={6}>
-            <img src="Assets/img/admission_form.png" alt="" srcset="" width="100%"/>
+            
+            <img src="Assets/img/admission_form.png" alt="" width="100%" id='ad-img'/>
+           
+            
           </Grid>
           
           <Grid item md={6}>
           <h2 align="center">Patient Admission Form</h2>
-          <form onSubmit={submitHaldle}>
+          <form onSubmit={submitHaldle} id="form">
             <Grid container spacing={1}>
               <Grid xs={12} sm={6} item>
                 <TextField
@@ -128,7 +130,8 @@ let user_email = window.sessionStorage.getItem("email");
                   onChange={changeHandle}
                 />
               </Grid>
-              <Grid xs={12} sm={6} item>
+              <Grid xs={12} md={6} item>
+              <FormControl fullWidth>
               <InputLabel id="demo-simple-select-label">Reason</InputLabel>
   <Select
     labelId="demo-simple-select-label"
@@ -143,6 +146,9 @@ let user_email = window.sessionStorage.getItem("email");
     <MenuItem value={30}>Metarnity</MenuItem>
     <MenuItem value={40}>Chronic Desease</MenuItem>
   </Select>
+
+              </FormControl>
+             
               </Grid>
               <Grid xs={12} sm={6} item>
                 <TextField

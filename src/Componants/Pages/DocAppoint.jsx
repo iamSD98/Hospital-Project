@@ -17,7 +17,7 @@ const DocAppoint = () => {
   // console.log(valid_email);
 
   let { did,appoid } = useParams();
-  console.log("doctor id",appoid,did);
+  // console.log("doctor id",appoid,did);
   let navigate=useNavigate("/")
   
   let depart_url = " http://localhost:4000/doctors";
@@ -83,7 +83,7 @@ let changeDateTime =(event)=>{
 
   let submitdata = (event) => {
     event.preventDefault();
-    console.log("the form value", ptnDetail);
+    // console.log("the form value", ptnDetail);
 
     let userdata={
       pfname: ptnDetail.pfname,
@@ -100,7 +100,7 @@ let changeDateTime =(event)=>{
     }
     axios.post(user_api,userdata)
     .then(res=>{
-    console.log("data registered",res);
+    // console.log("data registered",res);
       alert("patient appointment done")
       navigate("/")
       

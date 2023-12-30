@@ -87,7 +87,7 @@ const DoctorDetails = () => {
                   specality:{fetchDoc.specality}
                 </Typography>
                 <Link to={`/doctor-appo/${fetchDoc.doctorname}`}>
-                  <Button>Appointment </Button>
+                  <Button variant="contained">Appointment </Button>
                 </Link>
               </Box>
             </Grid>

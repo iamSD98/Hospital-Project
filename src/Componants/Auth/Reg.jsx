@@ -6,15 +6,9 @@ import {
   TextField,
   Stack,
   InputAdornment,
-  IconButton,
-  FormControl,
-  FormLabel,
-  Input,
 } from "@mui/material";
 import React, { useRef, useState } from "react";
-import CameraAltRoundedIcon from "@mui/icons-material/CameraAltRounded";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import Avatar from "@mui/material/Avatar";
 import Checkbox from "@mui/material/Checkbox";
 import "../../StyleComponants/Auth_style/SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
@@ -127,7 +121,7 @@ const Reg = () => {
 
   let submitHandle=(event)=>{
    event.preventDefault();
-    console.log("the reg data",Inputstate);
+    // console.log("the reg data",Inputstate);
     let registarData = new FormData();
 
     registarData.append("first_name",Inputstate.fname);
@@ -137,7 +131,7 @@ const Reg = () => {
     registarData.append("profile_pic",imgState);
     dispatch(sign_Up(registarData))
       .then(res=>{
-        console.log("Response from API", res);
+        // console.log("Response from API", res);
         if (res.payload.status===200) {
           setUser("Registration Done")
           navigate("/login");

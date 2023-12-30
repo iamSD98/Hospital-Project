@@ -92,7 +92,7 @@ const Login = () => {
 
     dispatch(sign_In(userdata))
     .then(res=>{
-      console.log("Response of API",res)
+      // console.log("Response of API",res)
       if(res.payload.status===200)
       {
         let base_url = "https://wtsacademy.dedicateddevelopers.us/";

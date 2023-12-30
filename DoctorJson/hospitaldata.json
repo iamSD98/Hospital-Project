@@ -4,7 +4,7 @@
       "id": 1,
       "banner": {
         "homebanner": "assets/img/banner.png",
-        "depatbanner": "assets/img/department.jpeg",
+        "depatbanner": "assets/img/aca.jpg",
         "emerbanner": "https://images.unsplash.com/photo-1554734867-bf3c00a49371?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZW1lcmdlbmN5fGVufDB8fDB8fHww"
       }
     }
@@ -363,6 +363,34 @@
       "date": "12-12-2023",
       "time": "14:49",
       "id": 1
+    },
+    {
+      "pfname": "Subham",
+      "plname": "Dhang",
+      "prelt": "Frined",
+      "padd": "Kolkata",
+      "pmail": "aaa8@gmail.com",
+      "pgen": "male",
+      "page": "25",
+      "pno": "9874566125",
+      "docname": "DR.Jagannath Bhattacharya",
+      "date": "20-12-2023",
+      "time": "07:58",
+      "id": 2
+    },
+    {
+      "pfname": "rahul",
+      "plname": "dey",
+      "prelt": "friend",
+      "padd": "howrah",
+      "pmail": "yy1@gmail.com",
+      "pgen": "male",
+      "page": "20",
+      "pno": "9874566011",
+      "docname": "DR. I Ahamed",
+      "date": "08-11-2023",
+      "time": "20:36",
+      "id": 3
     }
   ],
   "academic": [
@@ -414,7 +442,7 @@
       "add": "",
       "id": 1
     },
-      {
+    {
       "pname": "siddhartha dey",
       "gname": "rupali dey",
       "email": "yy1@gmail.com",

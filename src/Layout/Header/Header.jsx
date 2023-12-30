@@ -1,4 +1,13 @@
-import {AppBar,Container,Toolbar,Typography,Box,Button,Tab,Stack} from "@mui/material";
+import {
+  AppBar,
+  Container,
+  Toolbar,
+  Typography,
+  Box,
+  Button,
+  Tab,
+  Stack,
+} from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import AssignmentTurnedInIcon from "@mui/icons-material/AssignmentTurnedIn";
@@ -18,13 +27,12 @@ import "../../StyleComponants/Layout_style/Header.css";
 const Header = () => {
   let pro_img = window.sessionStorage.getItem("pro_image");
   let profile_name = window.sessionStorage.getItem("fname");
-  console.log("profile:", pro_img);
-  console.log("profile:", profile_name);
+  // console.log("profile:", pro_img);
+  // console.log("profile:", profile_name);
   // console.log("token",token_value);
   const navigate = useNavigate();
   let location = useLocation();
-    console.log(location);
-
+  // console.log(location);
 
   const [color, setColor] = useState(false);
 
@@ -36,15 +44,7 @@ const Header = () => {
     }
   };
   window.addEventListener("scroll", changecolor);
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
   let logoutUser = () => {
     window.sessionStorage.clear();
 
@@ -54,11 +54,8 @@ const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [open, setOpen] = React.useState(false);
 
- 
-
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
-    
   };
 
   const handleClose = (event) => {
@@ -84,29 +81,57 @@ const Header = () => {
         <Toolbar>
           <Typography sx={{ flexGrow: 3, display: { md: "flex", xs: "none" } }}>
             <Link to="/">
-              <img src="Assets/img/logo.png" alt="Logo" height={70} width={250}/>
+              <img
+                src="Assets/img/logo.png"
+                alt="Logo"
+                height={70}
+                width={250}
+              />
             </Link>
           </Typography>
           {/* For lg/md screen */}
           <Box sx={{ flexGrow: 2, display: { md: "flex", xs: "none" } }}>
-            <Link to="/" className={`${location.pathname ==='/'? "active":'not'}`}>
+            <Link
+              to="/"
+              className={`${location.pathname === "/" ? "active" : "not"}`}
+            >
               <Tab label="Home" id="tab" />
             </Link>
-            <Link to="emergency-dept" className={`${location.pathname ==='/emergency-dept'? "active" : "not"}`}>
+            <Link
+              to="emergency-dept"
+              className={`${
+                location.pathname === "/emergency-dept" ? "active" : "not"
+              }`}
+            >
               <Tab label="Emergency" id="tab" />
             </Link>
             {/* <Link to="admission" className={`${location.pathname ==='/emergency-dept-page'? "active" : "not"}`}>
               <Tab label="Admission" id="tab" />
             </Link> */}
 
-            <Link to="department" className={`${location.pathname ==='/department'? "active" : "not"}`}>
+            <Link
+              to="department"
+              className={`${
+                location.pathname === "/department" ? "active" : "not"
+              }`}
+            >
               <Tab label="Department" id="tab" />
             </Link>
 
-            <Link to="academics" className={`${location.pathname ==='/contact'? "active" : "not"}`}>
+            <Link
+              to="academics"
+              className={`${
+                location.pathname === "/contact" ? "active" : "not"
+              }`}
+            >
               <Tab label="Academics" id="tab" />
             </Link>
-            <Link to="ptndetails" className={`${location.pathname ==='/ptndetails'? "active" : "not"}`}>
+            <Link
+              to="ptndetails"
+              className={`${
+                location.pathname === "/ptndetails" ? "active" : "not"
+              }`}
+            >
               <AssignmentTurnedInIcon id="icon-tab" />
             </Link>
           </Box>
@@ -136,7 +161,7 @@ const Header = () => {
                 ></Avatar>
               </ButtonGroup>
               <Popper
-              anchorEl={anchorEl}
+                anchorEl={anchorEl}
                 open={open}
                 id="popper"
                 transition
@@ -168,7 +193,12 @@ const Header = () => {
           {/* For xs screen */}
           <Typography sx={{ flexGrow: 2, display: { md: "none", xs: "flex" } }}>
             <Link to="/">
-              <img src="Assets/img/logo.png" alt="Logo" height={70} width={250}/>
+              <img
+                src="Assets/img/logo.png"
+                alt="Logo"
+                height={70}
+                width={250}
+              />
             </Link>
           </Typography>
 
@@ -178,7 +208,7 @@ const Header = () => {
             aria-haspopup="true"
             onClick={handleDrawerOpen}
             color="black"
-            sx={{display: { md: "none", xs: "flex" } }}
+            sx={{ display: { md: "none", xs: "flex" } }}
           >
             <MenuIcon />
           </IconButton>
@@ -200,7 +230,7 @@ const Header = () => {
             onClick={handleDrawerClose}
             id="ico"
             sx={{
-              display: "flex",
+             
               justifyContent: "flex-start",
               display: { xs: "flex", md: "none" },
             }}
@@ -209,17 +239,17 @@ const Header = () => {
           </IconButton>
 
           <Stack direction="column" spacing={6}>
-          {window.sessionStorage.getItem("tokenValue") &&
-            <Box > 
-             <Avatar
-                alt={profile_name}
-                src={pro_img}
-                onClick={handleToggle}
-                sx={{ cursor: "pointer" }}
-                id="ava"
-              ></Avatar>
-            </Box>
-            }
+            {window.sessionStorage.getItem("tokenValue") && (
+              <Box>
+                <Avatar
+                  alt={profile_name}
+                  src={pro_img}
+                  onClick={handleToggle}
+                  sx={{ cursor: "pointer" }}
+                  id="ava"
+                ></Avatar>
+              </Box>
+            )}
 
             <Link to="/">
               <Tab label="Home" id="tab" />
@@ -267,10 +297,8 @@ const Header = () => {
             </Box>
           )}
         </Drawer>
-
       </Container>
     </AppBar>
-   
   );
 };
 

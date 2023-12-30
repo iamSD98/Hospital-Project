@@ -12,7 +12,7 @@ import ImageListItem from '@mui/material/ImageListItem';
 import { Link } from "react-router-dom";
 
 
-function srcset(image, size, rows = 1, cols = 1) {
+function srcSet(image, size, rows = 1, cols = 1) {
   return {
     src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
     srcSet: `${image}?w=${size * cols}&h=${
@@ -44,7 +44,7 @@ const Home = () => {
   return (
     <>
       {/*---------------------------------------------------------------Banner----------------------------------------------------------------------*/}
-
+      
       <Box id="box">
         <Container>
           <Grid container>
@@ -85,6 +85,7 @@ const Home = () => {
 
       <Container maxWidth="x1">
         <Box id="wrapper">
+
           {/*---------------------------------------------------------------About----------------------------------------------------------------------*/}
 
           <Container>
@@ -147,23 +148,26 @@ const Home = () => {
                     direction={"column"}
                     sx={{ display: { md: "none", xs: "flex" } }}
                   >
-                    <Link to={'/emergency-dept-page'}>
-                    <Button id="abt-btn-xs">
+                     <Link to="emergency-dept">
+                     <Button id="abt-btn-xs">
                       Emargency
                       <ArrowRightAltIcon style={{ color: "black" }} />
                     </Button>
-                    </Link>
-                    <Link to="/appointment">
+                    </Link> 
+                    
+                    <Link to="admission">
                       <Button id="abt-btn-xs">
-                        Appointment
+                      Admission
                         <ArrowRightAltIcon style={{ color: "black" }} />
                       </Button>
                     </Link>
-
-                    <Button id="abt-btn-xs">
-                      career
+                     <Link to='academics'>
+                     <Button id="abt-btn-xs">
+                     Academics
                       <ArrowRightAltIcon style={{ color: "black" }} />
                     </Button>
+                     </Link>
+                    
                   </Stack>
                 </Grid>
 
@@ -481,7 +485,7 @@ const Home = () => {
       {itemData.map((item) => (
         <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
           <img
-            {...srcset(item.img, item.rows, item.cols)}
+            {...srcSet(item.img, item.rows, item.cols)}
             style={{objectFit:"cover",height:"100%",width:"100%"}}
             alt={item.title}
             loading="lazy"

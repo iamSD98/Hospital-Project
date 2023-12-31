@@ -22,7 +22,7 @@ const DeptDetails = () => {
     axios
       .get(`${depart_url}/${id}`)
       .then((res) => {
-        // console.log("The fetch docdor ", res.data);
+        console.log("The fetch docdor ", res.data);
         setDept(res.data);
       })
       .catch((err) => {
@@ -86,7 +86,9 @@ const DeptDetails = () => {
                             width: 300,
                             margin: "10px auto",
                           }}
-                          image="https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg"
+                          // image="https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg"
+                          image={doc.docimg}
+                         
                           alt="green iguana"
                         />
                         <CardContent>

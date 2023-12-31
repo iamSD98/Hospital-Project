@@ -14,8 +14,9 @@ const DoctorDetails = () => {
     doctorname: "",
     qualification: "",
     experiance: "",
-    proimg: "",
+    docimg: "",
     docid: "",
+    
   });
 
   useEffect(() => {
@@ -41,6 +42,7 @@ const DoctorDetails = () => {
         <Box
           sx={{
             maxWidth: "100%",
+            height:"20em",
             borderRadius: "20px",
             marginBottom: 8,
             marginTop: 8,
@@ -50,7 +52,8 @@ const DoctorDetails = () => {
           <Grid container spacing={2}>
             <Grid item md={6} xs={12}>
               <img
-                src="https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg"
+                // src="https://img.freepik.com/free-vector/doctor-character-background_1270-84.jpg"
+                src={fetchDoc.docimg}
                 alt=""
                 id="doc-img"
               />

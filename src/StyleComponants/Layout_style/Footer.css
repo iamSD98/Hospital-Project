@@ -1,10 +1,11 @@
 #footer{background-color: black;width: 100%;font-weight: 400;font-family: 'Kanit', sans-serif;position: absolute;}
 
-#logo{display: grid;justify-items: center;margin-top: 30%;}
+#logo{display: grid;justify-items: center;margin-top: 50%;}
 
-#p1{color: white;padding-bottom: 10%;padding-top: 15%;font-family: 'Kanit', sans-serif;font-size:28px}
+#p1{color: white;padding-bottom: 10%;padding-top: 15%;font-family: 'Kanit', sans-serif;font-size:28px;justify-content: center}
 
-#p2{color: white;padding-bottom: 5%;font-family: 'Kanit', sans-serif;}
+#p2{color: white;padding-bottom: 5%;font-family: 'Kanit', sans-serif;justify-items: center}
+a#p2{text-decoration: none;}
 
 #p3{color: white;padding-bottom: 35%;font-family: 'Kanit', sans-serif; }
 

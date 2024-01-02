@@ -8,7 +8,7 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import '../../StyleComponants/Pages_style/DocAppoint.css'
 import axios from "axios";
-
+import Swal from 'sweetalert2'
 
 const DocAppoint = () => {
   let user_email = window.sessionStorage.getItem("email");
@@ -101,8 +101,15 @@ let changeDateTime =(event)=>{
     axios.post(user_api,userdata)
     .then(res=>{
     // console.log("data registered",res);
-      alert("patient appointment done")
-      navigate("/")
+    Swal.fire({
+      title: "Patient Admission Done",
+      icon: "success",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate("/") 
+      }
+    });
+     
       
     })
     .catch(err=>{

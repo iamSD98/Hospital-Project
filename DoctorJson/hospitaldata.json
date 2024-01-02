@@ -375,36 +375,7 @@
       "deptdetails": "Universal, flexible and affordable modality combining a single detector and fully-motorized positioning, which increases productivity./U-arm allowing lateral ‘cross table’ exams on rolling tables, for a number of configurations and increased patient and technologist comfort."
     }
   ],
-  "users": [
-    {
-      "pfname": "Rupali ",
-      "plname": "Dey",
-      "prelt": "Brother",
-      "padd": "Durgapur",
-      "pmail": "yy1@gmail.com",
-      "pgen": "female",
-      "page": "54",
-      "pno": "98654236587",
-      "docname": "DR S.K.Sen",
-      "date": "25-01-2024",
-      "time": "13:01",
-      "id": 1
-    },
-    {
-      "pfname": "",
-      "plname": "",
-      "prelt": "",
-      "padd": "",
-      "pmail": "yy1@gmail.com",
-      "pgen": "",
-      "page": "",
-      "pno": "",
-      "docname": "DR. I Ahamed",
-      "date": "",
-      "time": "",
-      "id": 2
-    }
-  ],
+  "users": [],
   "academic": [
     {
       "course_name": "BSC nursing",
@@ -543,6 +514,176 @@
       "page": "",
       "add": "",
       "id": 10
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 11
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 12
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 13
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 14
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 15
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 16
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 17
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 18
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 19
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 20
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 21
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 22
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 23
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 24
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 25
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 26
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 27
     }
   ]
 }

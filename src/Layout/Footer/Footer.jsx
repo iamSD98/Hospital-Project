@@ -46,10 +46,18 @@ const Footer = () => {
               
             </Grid>
             <Grid item md={3}>
+            
             <Stack id='p1'> 
                 Contact Us
                 </Stack> 
-                <Stack ><a href="tel:03327787312"id='p2'>Call us at (033)-2778-7312</a></Stack> 
+                <Stack id='p2'>
+               <CallIcon/>
+               <span style={{fontSize:'28px'}}>
+               Call us at
+               </span>
+                
+                <a href="tel:03327787312"id='p2'><span style={{fontSize:'28px'}}> (033)-2778-7312</span></a>
+                </Stack>
                 <Stack id='p2'>Book Appointment Online</Stack> 
                 <Stack id='p2'>Book Admission Online</Stack>
                 <Stack id='p2'>Give Your Feedback</Stack> 

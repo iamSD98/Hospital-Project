@@ -9,7 +9,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Link, useParams } from 'react-router-dom';
 import { Box, Button } from '@mui/material';
-
+import Swal from 'sweetalert2'
 const PtnDetails = () => {
 
 let [ptnDetail,setPtnDetail]=useState([]);
@@ -57,15 +57,28 @@ useEffect(()=>{
 
 
     let deleteAppo=((id)=>{
-      axios.delete(`${user_api}/${id}`)
-      .then(res=>{
-        alert("Patient Appointment Deleted")
-        fetchPtn();
+      
+     
+        Swal.fire({
+          title: "Are you sure?",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+          if (result.isConfirmed) {
+            axios.delete(`${user_api}/${id}`)
+            Swal.fire({
+              title: "Deleted!",
+              icon: "success"
+            });
+            fetchPtn();
+          }
+        });
+        
       })
-      .catch(err=>{
-        alert("deletion failed")
-      })
-    })
+    
 
     // const editHandle = ((id) =>{
     //   axios.post(`${user_api}/${id}`)

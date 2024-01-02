@@ -69,37 +69,18 @@ let navigate=useNavigate();
     .then(res=>{
       console.log("patient admission data",res.data);
       // alert("patient appointed")
-      Swal.fire(
-       
-        {
-         
+      // Swal.fire("Data Added:",res,'success');
+      // navigate('/view')
+       Swal.fire({
         title: "Patient Admission Done",
-        showClass: {
-          popup: `
-            animate__animated
-            animate__fadeInUp
-            animate__faster
-          `
-        },
-        hideClass: {
-          popup: `
-            animate__animated
-            animate__fadeOutDown
-            animate__faster
-          `
-        }
-       
+        icon: "success",
       }).then((result) => {
         if (result.isConfirmed) {
-          Swal.fire({
-            title: "Deleted!",
-            text: "Your file has been deleted.",
-            icon: "success"
-          });
+          navigate("/") 
         }
       });
 
-      navigate("/");
+      // navigate("/");
       setPtnData(res.data)
     })
     .catch(err=>{

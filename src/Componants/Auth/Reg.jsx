@@ -136,6 +136,14 @@ const Reg = () => {
           setUser("Registration Done")
           navigate("/login");
         }
+        else if (res.payload.status===201) {
+          setUser('Email Already Exists!')
+          
+      }
+      else{
+        setUser(null)
+         
+     }
         
       })
       .catch(err=>{
@@ -264,6 +272,7 @@ const Reg = () => {
                             {Isvalid.email === false ? (
                               <CheckCircleIcon />
                             ) : null}
+                             
                           </InputAdornment>
                         ),
                       }}

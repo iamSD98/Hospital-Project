@@ -44,8 +44,8 @@ const DoctorDetails = () => {
             maxWidth: "100%",
             height:"20em",
             borderRadius: "20px",
-            marginBottom: 8,
-            marginTop: 8,
+            marginBottom: 18,
+            marginTop: 18,
             boxShadow: "0px 5px 10px black",
           }}
         >

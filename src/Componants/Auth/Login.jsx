@@ -103,7 +103,7 @@ const Login = () => {
         window.sessionStorage.setItem('pro_image',img_url)
         window.sessionStorage.setItem('fname',res.payload.data.first_name)
         window.sessionStorage.setItem('lname',res.payload.data.last_name)
-       navigate(-1)
+       navigate(-3)
           
       }
       else if (res.payload.status===201) {

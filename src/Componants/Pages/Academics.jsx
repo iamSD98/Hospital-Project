@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Container, Box, Grid, Typography } from "@mui/material";
-
+import '../../StyleComponants/Pages_style/Acadamic.css'
 const Academics = () => {
 
 let [acadademic,setAcademic]=useState([])
@@ -83,9 +83,8 @@ fetchAcademic();
             <Grid item md={6} xs={12}>
               <img
                 src={post.deptbanner}
-                
                 alt=""
-                id="doc-img"
+               id='aca-img'
               />
             </Grid>
 

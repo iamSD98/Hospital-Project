@@ -59,7 +59,7 @@ useEffect(()=>{
     let deleteAppo=((id)=>{
       axios.delete(`${user_api}/${id}`)
       .then(res=>{
-        alert("data deleted")
+        alert("Patient Appointment Deleted")
         fetchPtn();
       })
       .catch(err=>{

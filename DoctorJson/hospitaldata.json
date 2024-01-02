@@ -63,7 +63,7 @@
           "specality": "Cardiologist",
           "qualification": "MD,DM(CARDIO)",
           "experiance": "15 Years",
-          "docimg":"https://t3.ftcdn.net/jpg/01/50/17/76/240_F_150177678_tTiXG1WOwVinmD6IvpFfySqDKyNETyvD.jpg",
+          "docimg": "https://t3.ftcdn.net/jpg/01/50/17/76/240_F_150177678_tTiXG1WOwVinmD6IvpFfySqDKyNETyvD.jpg",
           "docid": "cardio02"
         },
         {
@@ -73,6 +73,30 @@
           "experiance": "12 Years",
           "docimg": "https://img.freepik.com/free-photo/nurse-portrait-hospital_23-2150780304.jpg?t=st=1704009158~exp=1704012758~hmac=94f394d52b6b6ae08995c60d289e472f1e344e50a7622ea4b56cd610ab7003c9&w=740",
           "docid": "cardio03"
+        },
+        {
+          "doctorname": "DR. Satyam Chakraborty",
+          "specality": "General Physican",
+          "qualification": "MBBS,MD(CAL),GENERAL MEDICINE",
+          "experiance": "12 years",
+          "docimg": "https://t3.ftcdn.net/jpg/02/60/04/08/360_F_260040863_fYxB1SnrzgJ9AOkcT0hoe7IEFtsPiHAD.jpg",
+          "docid": "cardio04"
+        },
+        {
+          "doctorname": "DR.Rajkumar Manna",
+          "specality": "General Physican",
+          "qualification": "MBBS,MD(CAL),GENERAL MEDICINE",
+          "experiance": "12 years",
+          "docimg": "https://t4.ftcdn.net/jpg/03/20/52/31/240_F_320523164_tx7Rdd7I2XDTvvKfz2oRuRpKOPE5z0ni.jpg",
+          "docid": "cardio05"
+        },
+        {
+          "doctorname": "DR. Achinta Kumar Dutta",
+          "specality": "General Physican",
+          "qualification": "MBBS,MD(CAL),GENERAL MEDICINE",
+          "experiance": "12 years",
+          "docimg": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZG9jdG9yfGVufDB8fDB8fHww",
+          "docid": "cardio06"
         }
       ]
     },
@@ -169,7 +193,7 @@
           "specality": "Paediatrics",
           "qualification": "MBBS, MD(PED),DNB(PED)",
           "experiance": "15 Years",
-          "docimg":"https://t3.ftcdn.net/jpg/01/50/17/76/240_F_150177678_tTiXG1WOwVinmD6IvpFfySqDKyNETyvD.jpg",
+          "docimg": "https://t3.ftcdn.net/jpg/01/50/17/76/240_F_150177678_tTiXG1WOwVinmD6IvpFfySqDKyNETyvD.jpg",
           "docid": "pedia03"
         }
       ]
@@ -353,46 +377,32 @@
   ],
   "users": [
     {
-      "pfname": "rahul",
-      "plname": "das",
-      "prelt": "friend",
-      "padd": "howrah",
-      "pmail": "aaa8@gmail.com",
-      "pgen": "male",
-      "page": "20",
-      "pno": "533828285",
-      "docname": "DR.Jagannath Bhattacharya",
-      "date": "12-12-2023",
-      "time": "14:49",
+      "pfname": "Rupali ",
+      "plname": "Dey",
+      "prelt": "Brother",
+      "padd": "Durgapur",
+      "pmail": "yy1@gmail.com",
+      "pgen": "female",
+      "page": "54",
+      "pno": "98654236587",
+      "docname": "DR S.K.Sen",
+      "date": "25-01-2024",
+      "time": "13:01",
       "id": 1
     },
     {
-      "pfname": "Subham",
-      "plname": "Dhang",
-      "prelt": "Frined",
-      "padd": "Kolkata",
-      "pmail": "aaa8@gmail.com",
-      "pgen": "male",
-      "page": "25",
-      "pno": "9874566125",
-      "docname": "DR.Jagannath Bhattacharya",
-      "date": "20-12-2023",
-      "time": "07:58",
-      "id": 2
-    },
-    {
-      "pfname": "rahul",
-      "plname": "dey",
-      "prelt": "friend",
-      "padd": "howrah",
+      "pfname": "",
+      "plname": "",
+      "prelt": "",
+      "padd": "",
       "pmail": "yy1@gmail.com",
-      "pgen": "male",
-      "page": "20",
-      "pno": "9874566011",
+      "pgen": "",
+      "page": "",
+      "pno": "",
       "docname": "DR. I Ahamed",
-      "date": "08-11-2023",
-      "time": "20:36",
-      "id": 3
+      "date": "",
+      "time": "",
+      "id": 2
     }
   ],
   "academic": [
@@ -445,34 +455,94 @@
       "id": 1
     },
     {
-      "pname": "siddhartha dey",
-      "gname": "rupali dey",
+      "pname": "siddhartha",
+      "gname": "pcdey",
       "email": "yy1@gmail.com",
       "pnum": "9865745412",
-      "reason": 20,
-      "page": "",
+      "reason": 30,
+      "page": "54",
       "add": "ramrajatala",
-      "id": 7
+      "id": 2
     },
     {
       "pname": "siddhartha",
-      "gname": "rupali dey",
+      "gname": "pcdey",
+      "email": "yy1@gmail.com",
+      "pnum": "9865745412",
+      "reason": 30,
+      "page": "54",
+      "add": "ramrajatala",
+      "id": 3
+    },
+    {
+      "pname": "Soumajit",
+      "gname": "pcdey",
       "email": "yy1@gmail.com",
       "pnum": "9865321478",
       "reason": 20,
-      "page": "54",
+      "page": "",
       "add": "ramrajatala",
+      "id": 4
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 5
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 6
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 7
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
       "id": 8
     },
     {
-      "pname": "siddhartha",
-      "gname": "rupali dey",
+      "pname": "",
+      "gname": "",
       "email": "yy1@gmail.com",
-      "pnum": "9865745412",
-      "reason": 20,
-      "page": "25",
-      "add": "ramrajatala",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
       "id": 9
+    },
+    {
+      "pname": "",
+      "gname": "",
+      "email": "yy1@gmail.com",
+      "pnum": "",
+      "reason": "",
+      "page": "",
+      "add": "",
+      "id": 10
     }
   ]
 }

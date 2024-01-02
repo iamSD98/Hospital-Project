@@ -12,13 +12,15 @@ import MenuItem from "@mui/material/MenuItem";
 import '../../StyleComponants/Pages_style/Admission.css'
 import Select from "@mui/material/Select";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 
 const AdmissionForm = () => {
 
 let user_email = window.sessionStorage.getItem("email");
   
-  
+let navigate=useNavigate();  
  
   
 
@@ -66,7 +68,38 @@ let user_email = window.sessionStorage.getItem("email");
     axios.post(admission_url,admission_data)
     .then(res=>{
       console.log("patient admission data",res.data);
-      alert("patient appointed")
+      // alert("patient appointed")
+      Swal.fire(
+       
+        {
+         
+        title: "Patient Admission Done",
+        showClass: {
+          popup: `
+            animate__animated
+            animate__fadeInUp
+            animate__faster
+          `
+        },
+        hideClass: {
+          popup: `
+            animate__animated
+            animate__fadeOutDown
+            animate__faster
+          `
+        }
+       
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success"
+          });
+        }
+      });
+
+      navigate("/");
       setPtnData(res.data)
     })
     .catch(err=>{
